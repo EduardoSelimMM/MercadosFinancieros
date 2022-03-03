@@ -1,0 +1,407 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Bonos}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+\chapter*{Bonos}
+Hasta el momento hemos supuesto que cuando compramos/vendemos un bono, éste está recién emitido \textit{i.e.} es un bono nuevo. $\longrightarrow$ Esto se conoce como transacción en el \underline{mercado primario}.\\
+¿Qué pasa si yo ya tengo un bono y me quiero deshacer de él?\\
+Voy al mercado secundario\
+
+\textcolor{purple}{$\bullet$} En el mercado secundario se compra/venden instrumentos financieros que ya existen con autoridad.\\
+$\longrightarrow$ La pregunta que nos hacemos ahora es: ¿En cuánto \$ compraríamos/venderíamos un bono que ya fue emitido con anterioridad?\\
+\textcolor{magenta}{Depende}
+\textcolor{magenta}{\begin{enumerate}
+    \item Si compra/vende justo después de pago cupón
+    $$Precio=VP(\textit{Flujo faltante})$$
+    \item Si compra/vende entre fechas de pago de cupón (es un poquito más complicado)\\
+    El "problema" es: ¿cómo divido el último cupón que ya ocurrió?
+\end{enumerate}}
+\textcolor{purple}{$\bullet$} $OB_k$: El valor del bono justo después del \textit{k-ésimo} cupón\
+$$OB_k=C+(F_r - C_j)\ax{\angl{n-k}} + C(1+j)^{-(n-k)}$$
+\textcolor{purple}{$\bullet$} Sin embargo, $OB_k$ sólo está definido para $k\in\{0,1,...,n\}$ donde $OB_0=P$ y $OB_n=C$\
+
+\textcolor{purple}{$\bullet$} Nos gustaría poder dar el valor del bono en cualquier $t\in[0,n]$\
+
+\textcolor{purple}{$\bullet$} Hay 3 propuestas para hacer esto:
+\begin{enumerate}
+    \item Método teórico
+    \item Método práctico
+    \item Método semi-teórico
+\end{enumerate}
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da34657222641698626] 
+\draw    (141,191.9) -- (505,191.9) ;
+%Straight Lines [id:da8320031647356826] 
+\draw    (190.83,187.23) -- (190.83,197.4) ;
+%Straight Lines [id:da908003181732433] 
+\draw    (456.33,187.07) -- (456.33,197.23) ;
+%Straight Lines [id:da7312982626415365] 
+\draw    (149.83,187.23) -- (149.83,197.4) ;
+%Straight Lines [id:da5763637162450717] 
+\draw    (230.83,187.23) -- (230.83,197.4) ;
+%Straight Lines [id:da30794614098512674] 
+\draw    (309.83,187.23) -- (309.83,197.4) ;
+%Straight Lines [id:da37656947767695326] 
+\draw    (349.83,187.73) -- (349.83,197.9) ;
+%Straight Lines [id:da6195061540260131] 
+\draw    (390.33,187.23) -- (390.33,197.4) ;
+%Straight Lines [id:da5214754470951718] 
+\draw    (500.83,187.07) -- (500.83,197.23) ;
+%Straight Lines [id:da47740699399543474] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ]   (370,176.07) -- (370,228.07) ;
+\draw [shift={(370,230.07)}, rotate = 270] [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (255.6,197.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (144.9,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (185.4,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (226.4,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (293.8,202.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (439.8,201.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (345.8,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (374.3,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (494.8,200.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (411.1,199) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (479.9,172.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r} +C$};
+% Text Node
+\draw (117.9,220.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$P=OB_{0}$};
+% Text Node
+\draw (449.9,172.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (225.3,172.9) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (344.3,172.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (304.1,172.9) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (185.9,171.9) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (145.1,171.3) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (384.3,173.3) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ]  {$F_{r}$};
+% Text Node
+\draw (180.1,220.3) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$OB_{1}$};
+% Text Node
+\draw (219.1,221.3) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$OB_{2}$};
+% Text Node
+\draw (367,228.47) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$t$};
+% Text Node
+\draw (283,243.07) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ] [align=left] {¿cuánto vale el bono entre $\displaystyle k$ y $\displaystyle k+1$?};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{multicols}{2}
+    \centering
+    \textcolor{orange}{Método teórico}
+    $$V_t := OB_{\llcorner t\lrcorner}(1+j)^{t-\llcorner t\lrcorner}$$
+   
+    \columnbreak
+    
+    \textcolor{orange}{Método práctico}
+    $$\Tilde{V}_t := OB_{\llcorner t\lrcorner}\big[1+j(1+j(t-\llcorner t\lrcorner)\big]$$
+\end{multicols}
+
+\textcolor{blue}{¿De dónde surgen estas definiciones?}\\
+Calculo $OB_{\llcorner t\lrcorner} = OB_k$ (ya lo sé hacer) y luego acumulo esta cantidad del tiempo $k=\llcorner t\lrcorner$ a $t$
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da9890289656490168] 
+\draw    (209,150) -- (427,150) ;
+%Straight Lines [id:da7215314632081371] 
+\draw    (320,145.4) -- (320,155.47) ;
+%Straight Lines [id:da16812785542723963] 
+\draw    (250,145.4) -- (250,155.47) ;
+%Straight Lines [id:da6089489098469324] 
+\draw    (380,146) -- (380,156.07) ;
+%Curve Lines [id:da1699325406353832] 
+\draw    (250,140) .. controls (262.84,125.28) and (301.66,125.86) .. (319.35,139.34) ;
+\draw [shift={(320.67,140.4)}, rotate = 220.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6984120425153036] 
+\draw    (250.83,170.23) -- (234.08,186.99) ;
+\draw [shift={(232.67,188.4)}, rotate = 315] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4239479739707316] 
+\draw    (381.83,170.23) -- (398.75,187.15) ;
+\draw [shift={(400.17,188.57)}, rotate = 225] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (234.83,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$k=\llcorner t\lrcorner $};
+% Text Node
+\draw (317.83,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$t$};
+% Text Node
+\draw (366.83,157.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$k+1$};
+% Text Node
+\draw (232.5,203.93) node  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{37.63pt}\setlength\topsep{0pt}
+\begin{center}
+con interés\\compuesto
+\end{center}
+
+\end{minipage}};
+% Text Node
+\draw (426.17,203.93) node [anchor=east] [inner sep=0.75pt]  [font=\scriptsize] [align=left] {\begin{minipage}[lt]{37.63pt}\setlength\topsep{0pt}
+\begin{center}
+con interés\\simple
+\end{center}
+
+\end{minipage}};
+
+
+\end{tikzpicture}
+
+\end{center}
+\textcolor{orange}{Lema:} Para $k\in\{0,1,...,n,n-1\}$
+$$OB_k(1+j) = OB_{k+1} + F_r$$
+
+\underline{\textit{Demostración}}
+\begin{align*}
+    OB_k(1+j) &= \big[F_r\cdot \ax{\angl{n-k}} + Cv^{n-k}\big](1+j) + C(1+j)^{-(n-k)}(1+j)\\
+    &= F_r\big(v+v^2+\dotsc+v^{n-k-1}+v^{n-k}\big)(1+j) + C((1+j)^{-(n-k)}(1+j)\\
+    &= F_r\big(\underbrace{1+v+\dotsc+v^{n-k-1}+v^{n-k}}_{n-k\textit{ sumandos}}\big)(1+j) + C(1+j)^{-(n-k-1)}\\
+    &= F_r + F_r(v+\dotsc+v^{n-k}+v^{n-k-1}) + C(1+j)^{-(n-k-1)}\\
+    &= F_r + F_r\cdot\ax{\angl{n-k-1}} + Cv^{n-k-1}\\
+    &=F_r + OB_{k+1}
+\end{align*}
+\textcolor{orange}{Observaciones importantes}
+\begin{multicols}{2}
+    \textcolor{orange}{$\longrightarrow$ Método teórico}
+    \begin{align*}
+        \lim_{x\to1^-}&\Big(V_{\llcorner t\lrcorner+x} - V_{\llcorner t\lrcorner+1}\Big)\\
+        &=\lim_{x\to1^-}\Big(V_{\llcorner t\lrcorner+x} - OB_{\llcorner t\lrcorner+1}\Big)\\
+        &\textit{ pues }\llcorner t\lrcorner\textit{ es entero}\\
+        &=\lim_{x\to1^-}\Big(OB_{\llcorner t\lrcorner}(1+j)^x - OB_{\llcorner t\lrcorner+1}\Big)\\
+        &=\lim_{x\to1^-}\Big(OB_{\llcorner t\lrcorner}(1+j)^x \\
+        &- \big(OB_{\llcorner t\lrcorner}(1+j)-F_r\big)\Big)\\
+        &= OB_{\llcorner t\lrcorner}(1+j) - OB_{\llcorner t\lrcorner}(1+j) + F_r\\
+        &= F_r\\
+        \therefore& \lim_{x\to1^-} V_{\llcorner t\lrcorner+x} = V_{\llcorner t\lrcorner+1}+F_r
+    \end{align*}
+    
+    \columnbreak
+    
+    \textcolor{orange}{$\longrightarrow$ Método práctico}
+    \begin{align*}
+        \lim_{x\to1^-}&\Big(\Tilde{V}_{\llcorner t\lrcorner+x} - \Tilde{V}_{\llcorner t\lrcorner+1}\Big)\\
+        &=\lim_{x\to1^-}\Big(\Tilde{V}_{\llcorner t\lrcorner+x} - OB_{\llcorner t\lrcorner+1}\Big)\\
+        &\textit{ pues }\llcorner t\lrcorner\textit{ es entero}\\
+        &=\lim_{x\to1^-}\Big(OB_{\llcorner t\lrcorner}(1+jx) - OB_{\llcorner t\lrcorner+1}\Big)\\
+        &=\lim_{x\to1^-}\Big(OB_{\llcorner t\lrcorner}(1+jx) \\
+        &- OB_{\llcorner t\lrcorner}(1+j)+F_r\Big)\\
+        &= OB_{\llcorner t\lrcorner}(1+j) - OB_{\llcorner t\lrcorner}(1+j) + F_r\\
+        &= F_r\\
+        \therefore& \lim_{x\to1^-} \Tilde{V}_{t+x} = \Tilde{V}_{\llcorner t\lrcorner+1}+F_r
+    \end{align*}
+\end{multicols}
+
+Es decir, tanto función $t\to V_t$ como la función $t\to\Tilde{V}_j$ son discontinues en $1,2,...,n-1$.\
+
+Para ''arreglar'' esta discontinuidad de $t\to\Tilde{V}_j$ se puede definir una función $\gamma$ que cumpla:
+\begin{itemize}
+    \item[(i)] $\gamma$ es continua
+    \item[(ii)] \begin{align*}
+        \gamma(0)&=OB_0\\
+        \gamma(1)&=OB_1\\
+        &\vdots\\
+        \gamma(n)&=OB_n
+    \end{align*}
+    \item[(iii)] Sea un segmento de recta en los intervalos $(k,k+1)$.
+\end{itemize}
+¿Cómo obtenemos la regla de correspondencia de $\gamma$?
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da11483983820175225] 
+\draw    (350.17,195.4) -- (350.17,205.4) ;
+%Straight Lines [id:da30526072049388187] 
+\draw    (330.17,195.4) -- (330.17,205.4) ;
+%Straight Lines [id:da1304058758067589] 
+\draw    (290.17,195.4) -- (290.17,205.4) ;
+%Shape: Axis 2D [id:dp4802451250070878] 
+\draw  (237.33,200.38) -- (382,200.38)(250.43,93.07) -- (250.43,212.07) (375,195.38) -- (382,200.38) -- (375,205.38) (245.43,100.07) -- (250.43,93.07) -- (255.43,100.07)  ;
+%Straight Lines [id:da3823753294892204] 
+\draw    (245.65,109.9) -- (255.65,109.9) ;
+%Straight Lines [id:da764091905390827] 
+\draw    (245.66,129.9) -- (255.66,129.9) ;
+%Straight Lines [id:da14197494646053066] 
+\draw    (245.69,169.9) -- (255.69,169.9) ;
+%Straight Lines [id:da17668147611498453] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (250.17,109.73) -- (350.5,109.73) ;
+%Straight Lines [id:da5388869901927572] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (250.17,170.23) -- (290,170.23) ;
+%Straight Lines [id:da29184588010983425] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (350.5,109.9) -- (350.5,200.4) ;
+%Straight Lines [id:da7569647002557991] 
+\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (250.17,130.23) -- (330.5,130.23) ;
+%Straight Lines [id:da9414423247678357] 
+\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (330.5,129.9) -- (330.5,200.4) ;
+%Straight Lines [id:da8872388789932882] 
+\draw [color={rgb, 255:red, 251; green, 165; blue, 165 }  ,draw opacity=1 ][line width=2.25]    (290,170.23) -- (350.5,109.9) ;
+
+% Text Node
+\draw (157.17,106.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\gamma ( k+1) =OB_{k+1}$};
+% Text Node
+\draw (218.17,126.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\gamma ( t)$};
+% Text Node
+\draw (183.17,165.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\gamma ( k) =OB_{k}$};
+% Text Node
+\draw (287.17,208.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$k$};
+% Text Node
+\draw (326,208.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$t$};
+% Text Node
+\draw (341.17,208.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$k+1$};
+
+
+\end{tikzpicture}
+
+\end{center}
+La pendiente del segmento de recta es 
+$$\frac{\gamma(k+1)-\gamma(k)}{k+1-k} = \gamma(k+1) - \gamma(k)$$
+
+Usando la ecuación de la recta punto-pendiente
+\begin{align*}
+    &\gamma(t) - \gamma(k) = \big[\gamma(k+1)-\gamma(k)\big](t-k)\\
+    \Rightarrow\quad &\gamma(t) -\gamma(\llcorner t\lrcorner) = \Big[\gamma(\llcorner t\lrcorner+1) -\gamma(\llcorner t\lrcorner)\Big](t-\llcorner t\lrcorner)\\
+    \Rightarrow\quad &\gamma(t) = \gamma(\llcorner t\lrcorner) + \Big[\gamma(\llcorner t\lrcorner+1) -\gamma(\llcorner t\lrcorner)\Big](t-\llcorner t\lrcorner)\\
+    \Rightarrow\quad &\gamma(t) = OB_{\llcorner t\lrcorner} + \Big[OB_{\llcorner t\lrcorner+1} - OB_{\llcorner t\lrcorner}\Big](t-\llcorner t\lrcorner)...\circledast\\
+    &\text{donde }\gamma(\cdot) \text{ cumple las 3 condiciones que se pidieron.}
+\end{align*}
+La ecuación $\circledast$ motiva la siguiente definición.
+
+\begin{definition}
+Se define el valor práctico limpio como
+$$\Tilde{V_t}^{[C]} := OB_{\llcorner t\lrcorner} + \Big[OB_{\llcorner t\lrcorner+1}-OB_{\llcorner t\lrcorner}\Big](t-\llcorner t\lrcorner)$$
+\end{definition}
+
+\textit{Observación:}
+\begin{align*}
+    \Tilde{V_t} - \Tilde{V_t}^{[C]} &= OB_{\llcorner t\lrcorner}\big[1+j(t-\llcorner t\lrcorner)\big] - \big[OB_{\llcorner t\lrcorner} + [OB_{\llcorner t\lrcorner+1} - OB_{\llcorner t\lrcorner}](t-\llcorner t\lrcorner)\big] \\
+    &= OB_{\llcorner t\lrcorner}\cdot j(t-\llcorner t\lrcorner) - \big[OB_{\llcorner t\lrcorner+1} - OB_{\llcorner t\lrcorner}\big](t-\llcorner t\lrcorner)\\
+    &= (t-\llcorner t\lrcorner)\big[OB_{\llcorner t\lrcorner}\cdot j - OB_{\llcorner t\lrcorner+1}+ OB_{\llcorner t\lrcorner}\big]\\
+    &= (t-\llcorner t\lrcorner)\big[OB_{\llcorner t\lrcorner}(1+j) - OB_{\llcorner t\lrcorner+1}\big]\\
+    &=(t-\llcorner t\lrcorner)\cdot F_r\\
+    &\quad\therefore\Tilde{V_t} - \Tilde{V_t}^{[C]} = F_r(t-\llcorner t\lrcorner)\\
+    &\text{donde }(t-\llcorner t\lrcorner)\text{ lapso a tiempo entre el último cupón y la fecha de valuación}
+\end{align*}
+Entonces
+$$\Tilde{V_t} - \Tilde{V_t}^{[C]} = \underbrace{F_r(t-\llcorner t\lrcorner)}_{\text{parte proporcional del cupón}}$$
+Falta definir el valor técnico limpio
+\begin{definition}
+Se define el valor teórico limpio como
+$$V_t^{[C]} := \frac{\delta}{j}F_r\Bar{a}_{\angl{n-t}j} + C(1+j)^{-(n-t)} \text{ con }\delta\sim j$$
+\end{definition}
+
+¿Qué motiva esta definición?\\
+Nótese que
+$$\frac{\delta}{j}F_r\cdot\Bar{a}_{\angl{n-t}j} + \frac{\delta}{j}F_r\frac{1-v^{n-t}}{\delta} = F_r\frac{1-v^{n-t}}{j}$$
+En la última expresión, se tiene la tentación de escribir $F_r\ax{\angl{n-t}}$ pero no tiene sentido pues $n-t\notin \mathbb{N}_+$y el símbolo $\ax{\angl{k}}$ sólo está definido para $k\in\mathbb{N}_+$.\\
+Sin embargo, el símbolo $\Bar{a}_{\angl{t}}$ sí está bien definido para $t\in\mathbb{R}$ pues
+$$\Bar{a}_{\angl{t}} = \int_0^t v^udu = \frac{1-v^t}{\delta}$$
+
+\begin{proposition}
+$$V_t^{[C]} = V_t F_r\Big[\frac{(1+j)^{t-\llcorner t\lrcorner}-1}{j}\Big]$$
+\end{proposition}
+\underline{\textit{Demostración}}
+\begin{align*}
+    V_t^{[C]} &= \frac{\delta}{j}F_r\cdot\Bar{a}_{\angl{n-t}} + C(1+j)^{-(n-t)}\\
+    &= \frac{\delta}{j}F_r\Bar{a}_{\angl{n-t}} + Cv^{n-t}\\
+    &= v^{\llcorner t\lrcorner-t}\Big[v^{t-\llcorner t\lrcorner}\frac{\delta}{j}F_r\Bar{a}_{\angl{n-t}} + v^{t-\llcorner t\lrcorner} Cv^{n-t}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[v^{t-\llcorner t\lrcorner}\frac{\delta}{j}F_r\Bar{a}_{\angl{n-t}} + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[v^{t-\llcorner t\lrcorner}\frac{\delta}{j}F_r\Big(\frac{1-v^{n-t}}{\delta} + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[F_r\big(\frac{v^{t-\llcorner t\lrcorner}-(v^{n-\llcorner t\lrcorner}}{j}\big) + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[F_r\big(\frac{v^{t-\llcorner t\lrcorner}-1+1-(v^{n-\llcorner t\lrcorner}}{j}\big) + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[F_r\big(\frac{v^{t-\llcorner t\lrcorner}-1}{j}\big) + F_r\big(\frac{1-v^{n-\llcorner t\lrcorner}}{j}\big) + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[F_r\big(\frac{v^{t-\llcorner t\lrcorner}-1}{j}\big) + F_r\ax{\angl{n-\llcorner t\lrcorner}} + Cv^{n-\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\Big[F_r\big(\frac{v^{t-\llcorner t\lrcorner}-1}{j}\big) + OB_{\llcorner t\lrcorner}\Big]\\
+    &= v^{\llcorner t\lrcorner-t}\cdot F_r\big(\frac{v^{t-\llcorner t\lrcorner}-1}{j}\big) + v^{\llcorner t\lrcorner-t}OB_{\llcorner t\lrcorner}\Big]\\
+    &= F_r\bigg[\frac{1-v^{\llcorner t\lrcorner-t}}{j}\bigg] + v^{\llcorner t\lrcorner-t}OB_{\llcorner t\lrcorner}\\
+    &= -F_r\bigg[\frac{(1+j)^{t-\llcorner t\lrcorner}-1}{j}\bigg] + v^{\llcorner t\lrcorner-t}OB_{\llcorner t\lrcorner}\\
+    &= -F_r\bigg[\frac{(1+j)^{t-\llcorner t\lrcorner}-1}{j}\bigg] + (1+j)^{t-\llcorner t\lrcorner}OB_{\llcorner t\lrcorner}\\
+    &= -F_r\bigg[\frac{(1+j)^{t-\llcorner t\lrcorner}-1}{j}\bigg] + V_t
+\end{align*}
+En resumen,
+\begin{align*}
+    \Tilde{V_t} - \Tilde{V_t}^{[C]} &= F_r(t- \llcorner t\lrcorner)>0\\
+    V_t - V_t^{[C]} &= F_r\Big[\frac{(1+j)^{t- \llcorner t\lrcorner}-1}{j}\Big]>0
+\end{align*}
+
+\begin{center}
+\begin{table}[h]
+\centering
+\begin{tabular}{cc|c|c}
+ &
+  \begin{tabular}[c]{@{}c@{}}Flat Value\\ (Sucio)\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Market Value\\ (Limpio)\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Accured\\ coupon\end{tabular} \\ \hline
+Teórico      & $OB_{\llcorner t\lrcorner}(1+j)^{t-\llcorner t\lrcorner} = V_t$        & $V_t^{[C]}$         & $F_r\Big[\frac{(1+j)^{t-\llcorner t\lrcorner}-1}{j}\Big]$ \\ \hline
+Práctico     & $OB_{\llcorner t\lrcorner}[1+j(t-\llcorner t\lrcorner)] = \Tilde{V_t}$ & $\Tilde{V_t}^{[C]}$ & $F_r[t-\llcorner t\lrcorner]$                             \\ \hline
+Semi-teórico & $OB_{\llcorner t\lrcorner}(1+j)^{t-\llcorner t\lrcorner}=V_t$          & $\Tilde{V_t}^{[C]}$ & $F_r[t-\llcorner t\lrcorner]$                            
+\end{tabular}
+\end{table}
+\end{center}
+
+\end{document}

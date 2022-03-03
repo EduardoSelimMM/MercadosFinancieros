@@ -1,0 +1,458 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Amortización}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+
+\chapter*{Amortización de un bono cuponado}
+\textcolor{magenta}{Recordatorio:} Un bono es un instrumento financiero que, a cambio de un pago (el precio del bono), el comprador tiene derecho de recibir un flujo de efectivo futuro.\\
+Los dos tipos de bonos que vimos son:
+\begin{itemize}
+    \item Bono cupón-cero
+    \item Bono cuponado nivelado
+\end{itemize}
+
+En particular, en un bono cuponado nivelado.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da34657222641698626] 
+\draw    (141,191.9) -- (505,191.9) ;
+%Straight Lines [id:da8320031647356826] 
+\draw    (190.83,187.23) -- (190.83,197.4) ;
+%Straight Lines [id:da908003181732433] 
+\draw    (456.33,187.07) -- (456.33,197.23) ;
+%Straight Lines [id:da7312982626415365] 
+\draw    (149.83,187.23) -- (149.83,197.4) ;
+%Straight Lines [id:da5763637162450717] 
+\draw    (230.83,187.23) -- (230.83,197.4) ;
+%Straight Lines [id:da30794614098512674] 
+\draw    (309.83,187.23) -- (309.83,197.4) ;
+%Straight Lines [id:da37656947767695326] 
+\draw    (349.83,187.73) -- (349.83,197.9) ;
+%Straight Lines [id:da6195061540260131] 
+\draw    (390.33,187.23) -- (390.33,197.4) ;
+%Straight Lines [id:da5214754470951718] 
+\draw    (500.83,187.07) -- (500.83,197.23) ;
+
+% Text Node
+\draw (255.6,197.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (144.9,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (185.4,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (226.4,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (293.8,202.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (439.8,201.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (345.8,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (374.3,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (494.8,200.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (411.1,199) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (492.9,169.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (143.9,220.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$P$};
+% Text Node
+\draw (449.9,169.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (225.3,172.9) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (344.3,173.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (304.1,172.9) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (185.9,171.9) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (145.1,171.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (384.3,174.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{itemize}
+    \item[ ] $F$: Valor nominal (Face value o valor facial)
+    \item[ ] $r$: Tasa cupón
+    \item[ ] $P$: Precio del bono
+    \item[ ] $j$: Tasa de rendimiento del bono
+    \item[ ] $n$: Plazo del bono o número de cupones
+    \item[ ] $C$: Valor de redención
+    \item[ ] $F_r$: Cupón
+\end{itemize}
+
+Vimos al menos dos fórmulas para calcular el precio de un bono:\\
+\textit{Fórmula fundamental}
+$$P=F_r\ax{\angln j} + C(1+j)^{-n}$$
+\textit{Fórmula premio/descuento}
+$$P=(F_r-C_j) \ax{\angln j} + C$$
+
+\textcolor{blue}{Recordatorio:}
+\begin{definition}
+\begin{itemize}
+    \item Se dice que un bono se redime a la par si $C=F$
+    \item Se dice que un bono se redime con premio si $C>F$
+    \item Se dice que un bono se redime con descuento si $C<F$
+    \item Se dice que un bono se redime a la par si $P=C$
+    \item Se dice que un bono se redime con premio si $P>C$
+    \item Se dice que un bono se redime con descuento si $P<C$
+\end{itemize}
+\end{definition}
+
+Nótese que:\\
+\textcolor{purple}{$\bullet$}\textit{ El bono que se compra a la par:}
+\begin{align*}
+    P=C &\iff C+(F_r-C_j)\ax{\angln} =C \iff (F_r-C_j)\ax{\angln} = \varnothing\\
+    &\iff F_r-C_j=0\textit{ pues } \ax{\angln}>0\\
+    &\iff F_r=C_j
+\end{align*}
+Es decir, el bono se compra a la par si $F_r=C_j$
+
+\textcolor{purple}{$\bullet$}\begin{align*}
+    P>C &\iff C+(F_r-C_j)\ax{\angln}=C \iff (F_r -C_j)\ax{\angln}>\varnothing\\
+    &\iff F_r-C_j>0 \textit{ pues }\ax{\angln}>0\\
+    &\iff F_r> C_j
+\end{align*}
+Es decir, el bono se compra con premio si $F_r>C_j$
+
+\textcolor{purple}{$\bullet$} $P<C\iff F_r<C_j$
+Es decir, el bono se compra con descuento si $F_r<C_j$\\
+También se puede considerar a la compra/venta de un bono de la siguiente forma:
+\begin{itemize}
+    \item El emisor \textit{(quien vende el bono)} pide hoy P \textit{(al comprador)} y pagará $C$ al término de $n$ periodos
+    \item En las fechas $1,2,...,n$ \textit{el emisor} paga \textit{al comprador} una cantidad $F_r$ al comprador del bono.
+\end{itemize}
+
+¿Se puede considerar al cupón $F_r$ como pago de interés sobre el préstamo de $P$?\\
+\textcolor{blue}{Depende como sea $P$ con respecto a $C$. Vamos a analizarlo poco a poco.}\\
+Para un préstamo de $L=P$, ¿cuánto interés se debe después del 1er periodo?
+\begin{align*}
+    I_1 :&=L_j =P_j = [C+(F_r-C_j)\ax{\angln}]\cdot j\\
+    &= C_j + (F_r-C_j)\cdot j\cdot\ax{\angln j} = C_j+ (F_r-C_j)j\bigg(\frac{1-v^n}{j}\bigg)\\
+    &= C_j + (F_r-C_j)- (F_r-C_j)v^n = F_r - (F_r-C_j)v^n
+\end{align*}
+¿Cuánto pagó el emisor al comprador después de un periodo?\\
+\textcolor{blue}{$F_R$, el cupón}
+
+¿Cuánto es el neto con ese 1er cupón?\\
+\textcolor{blue}{$P_1:= F_r -I_1 = F_r-[F_r-(F_r-C_j)v^n] = (F_r-C_j)v^n$}
+
+¿Cuánto debe de la deuda original después del primer pago de cupón?
+\begin{align*}
+    OB_1 &= OB_0 -P_1\\
+    &= L -P_1 = P - P_1\\
+    &= [C + (F_r -C_j)\ax{\angln}] - (F_r-C_j)v^n\\
+    &= C+ (F_r-C_j)(\ax{\angln} - v^n)\\
+    C + (F_r - C_j)\ax{\angl{n-1}j}
+\end{align*}
+
+¿Cuánto interés se debe después del 2o periodo?
+\begin{align*}
+    I_2 :&= OB_1\cdot j = [C + (F_r-C_j)\ax{\angl{n-1}}]\cdot j\\
+    &= C_j + (F_r-C_j)j\cdot\ax{\angl{n-1}j}\\
+    &= C_j + (F_r -C_j)j\Big(\frac{1-v^{n-1}}{j}\Big)\\
+    &= C_j + (F_r-C_j)(1-v^{n-1})\\
+    &= C_j+(F_r-C_j)-(F_r-C_j)v^{n-1}\\
+    &= F_r - (F_r-C_j)v^{n-1}
+\end{align*}
+
+¿Cuánto pagó el emisor al comprador en el 2o periodo?\\
+\textcolor{blue}{$F_r$, el cupón}\\
+
+¿Cuánto es el neto con ese 2do cupón?
+\begin{align*}
+    P_2 :&= F_r - I_2 = F_r-(F_r-(F_r-C_j)v^{n-1})\\
+    &= (F_r-C_j)v^{n-1}
+\end{align*}
+
+¿Cuánto se debe de la deuda original después del segundo pago de cupón?
+\begin{align*}
+    OB_2 :&= OB_1-P_2\\
+    &= [C+(F_r-C_j)\ax{\angl{n-1}}] - (F_r-C_j)v^{n-1}\\
+    &= C+(F_r-C_j)[\ax{\angl{n-1}}-v^{n-1}]\\
+    &= C+(F_r-C_j)\ax{\angl{n-2}}
+\end{align*}
+
+¿Cuánto se debe después del tercer periodo?
+\begin{align*}
+    I_3 :&= OB_2\cdot j = [C + (F_r-C_j)\ax{\angl{n-2}}]\cdot j\\
+    &= C_j + (F_r-C_j)(1-v^{n-2})\\
+    &= F_r - (F_r-C_j)v^{n-2}
+\end{align*}
+
+¿Cuánto pagó el emisor al comprador en el 3er periodo?\\
+\textcolor{blue}{$F_r$, el cupón}\\
+
+¿Cuánto es el neto con ese 3er cupón?
+\begin{align*}
+    P_3 :&= F_r - I_3 = F_r-(F_r-(F_r-C_j)v^{n-2})\\
+    &= (F_r-C_j)v^{n-2}
+\end{align*}
+
+¿Cuánto se debe de la deuda original después del tercer pago de cupón?
+\begin{align*}
+    OB_3 :&= OB_2-P_3\\
+    &= [C+(F_r-C_j)\ax{\angl{n-2}}] - (F_r-C_j)v^{n-2}\\
+    &= C+(F_r-C_j)[\ax{\angl{n-2}}-v^{n-2}]\\
+    &= C+(F_r-C_j)\ax{\angl{n-3}}
+\end{align*}
+
+\textit{Hay un patrón...}
+
+En general, después del \textit{k-ésimo} periodo, ¿cuánto debe de interés el emisor al comprador?
+$$I_k:= j\cdot OB_{k-1} = F_r - (F_rC_j)v^{n-k+1}$$
+
+¿Cuánto pagó el emisor al comprador en el \textit{k-ésimo} periodo?\\
+\textcolor{blue}{$F_r$, el cupón}\\
+
+¿Cuánto es el neto con ese \textit{k-ésimo} cupón?
+\begin{align*}
+    P_k :&= F_r-I_k\\
+    &= (F_r-C_j)v^{n-k+1}
+\end{align*}
+
+¿Cuánto debe de la deuda original después del \textit{k-ésimo} pago de cupón?
+\begin{align*}
+    OB_k &= OB_{k-1} - P_k\\
+    &= C+ (F_r-C_j)\ax{\angl{n-k}}
+\end{align*}
+\textcolor{blue}{¿Cuánto vale $OB_n$?} ¿Cuánto me debes después de pagarme todos los cupones? \\
+Respuesta: $C$\\
+La matemática es noble/consistente
+$$OB_n = C + (F_r - C_j)\ax{\angl{n-n}} = C + (F_r-C_j)\cdot 0 = C$$
+Hecho que hace sentido pues después de que se pagaron todos los cupones ya sólo queda por pagar $C$.
+
+En resumen:
+\begin{enumerate}
+    \item $I_K$: Interés que el emisor debe en el periodo $k$ al comprador
+    \item $F_r$: Pago cupón
+    \item $P_k:=F_r-I_k$ y representa el capital principal que se pagó después del \textit{k-ésimo} cupón
+    \item $OB_k=OB_{k-1}-P_k$ y representa el saldo insoluto después de que se pagó el \textit{k-ésimo} cupón
+\end{enumerate}
+
+\textit{Observación}
+\begin{align*}
+    OB_k &= C+ (F_r-C_j)\ax{\angl{n-k}j}\\
+    &= C+F_r\cdot \ax{\angl{n-k}j} - C_j\ax{\angl{n-k}j}\\
+    &= C + F_r\ax{\angl{n-k}j} -C_j\Big[\frac{1-v^{n-k}}{j}\Big]\\
+    &= C + F_r\ax{\angl{n-k}j} - C+Cv^{n-k}\\
+    &= F_r\ax{\angl{n-k}j} + Cv^{n-k}
+\end{align*}
+Lo anterior representa el valor presente del flujo restante.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da20079718076773256] 
+\draw    (123.4,148.7) -- (487.4,148.7) ;
+%Straight Lines [id:da20140309027965386] 
+\draw    (173.23,144.03) -- (173.23,154.2) ;
+%Straight Lines [id:da5849034461841619] 
+\draw    (438.73,143.87) -- (438.73,154.03) ;
+%Straight Lines [id:da9377575438639768] 
+\draw    (132.23,144.03) -- (132.23,154.2) ;
+%Straight Lines [id:da639336669705882] 
+\draw    (213.23,144.03) -- (213.23,154.2) ;
+%Straight Lines [id:da003432744363729423] 
+\draw    (292.23,144.03) -- (292.23,154.2) ;
+%Straight Lines [id:da6792924625244605] 
+\draw    (332.23,144.53) -- (332.23,154.7) ;
+%Straight Lines [id:da8685383153988511] 
+\draw    (372.73,144.03) -- (372.73,154.2) ;
+%Straight Lines [id:da24814193718307598] 
+\draw    (483.23,143.87) -- (483.23,154.03) ;
+%Shape: Free Drawing [id:dp9065786106999266] 
+\draw  [color={rgb, 255:red, 9; green, 0; blue, 255 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (382.27,131.67) .. controls (380.64,131.67) and (381.24,127.85) .. (378.27,127.67) .. controls (374.54,127.43) and (370.79,127.42) .. (367.07,127.67) .. controls (363.11,127.93) and (361.47,149.39) .. (371.07,150.87) .. controls (382.12,152.57) and (388.59,145.9) .. (381.47,131.67) ;
+%Shape: Free Drawing [id:dp02217973805327067] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (182.27,129.27) .. controls (181.03,130.4) and (165.47,143.27) .. (165.47,146.07) ;
+%Shape: Free Drawing [id:dp3184191538770488] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (165.47,129.27) .. controls (173.6,129.27) and (179.57,138.64) .. (183.07,144.47) ;
+%Shape: Free Drawing [id:dp40282330529079835] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (207.07,131.67) .. controls (212.69,131.67) and (231.07,138.05) .. (231.07,146.07) ;
+%Shape: Free Drawing [id:dp913307588863777] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (226.27,128.47) .. controls (218.06,128.47) and (208.67,136.4) .. (208.67,143.67) ;
+%Shape: Free Drawing [id:dp2848047534212973] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (288.67,131.67) .. controls (292.32,133.49) and (305.01,143.67) .. (306.27,143.67) ;
+%Shape: Free Drawing [id:dp42447362878922834] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (302.27,131.67) .. controls (293.24,131.67) and (289.95,138.97) .. (283.07,141.27) ;
+%Shape: Free Drawing [id:dp7261324650621672] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (342.27,132.47) .. controls (333.74,132.47) and (328.35,142.87) .. (323.87,142.87) ;
+%Shape: Free Drawing [id:dp4233023651973924] 
+\draw  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75] [line join = round][line cap = round] (324.67,131.67) .. controls (331.29,135.45) and (340.26,138.46) .. (345.47,143.67) ;
+%Curve Lines [id:da03184478790222589] 
+\draw [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ]   (374.4,126.8) .. controls (358.31,118.69) and (349.57,123.34) .. (339.82,130) ;
+\draw [shift={(338.27,131.07)}, rotate = 325.3] [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da3206870602695284] 
+\draw [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ]   (439.07,125.87) .. controls (398.3,104.11) and (352.92,109.44) .. (333.8,129.24) ;
+\draw [shift={(332.67,130.47)}, rotate = 311.5] [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da5158322028124752] 
+\draw [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ]   (480.67,126.87) .. controls (439.11,95.51) and (353,101.22) .. (332.25,121.04) ;
+\draw [shift={(331.07,122.27)}, rotate = 311.5] [color={rgb, 255:red, 0; green, 6; blue, 255 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (238,154.3) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (127.3,158.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (167.8,158.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (208.8,158.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (276.2,159.1) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (422.2,158.6) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (328.2,159.6) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (356.7,159.6) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (477.2,157.1) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (393.5,155.8) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (460.3,126.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r} +C$};
+% Text Node
+\draw (126.3,177.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$P$};
+% Text Node
+\draw (432.3,126.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (207.7,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (326.7,130.5) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (286.5,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (168.3,128.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+% Text Node
+\draw (366.7,131.1) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$F_{r}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+$$\textcolor{blue}{\boxed{\therefore OB_k = C+(F_r-C_j)\ax{\angl{n-k}j} = F_r\ax{\angl{n-k}j} + C(1+j)^{-(n-k)}}}$$
+
+\textcolor{purple}{$\bullet$} Es decir, $OB_k$ también se puede interpretar como el valor del bono después del \textit{k-ésimo} cupón, es por esto que en el contexto de bonos se denota a $OB_k$ como $B_k$ y se conoce como \textit{Book value} después del \textit{k-ésimo} cupón.
+
+\textcolor{purple}{$\bullet$} Regresando a la pregunta original\\
+¿Se puede considerar a los cupones como pago de interés de la deuda?\\
+\textcolor{blue}{Depende. Hay que ser más preciso con la pregunta}\\
+Es decir, ¿$F_r=I_k$?\\
+
+Recordatorio
+$$I_k := j\cdot OB_{k-1} = F_r - (F_r - C_j)v^{n-k+1}$$
+
+\textcolor{purple}{$\bullet$} \begin{align*}
+    F_r = I_k &\iff F_r =F_r - (F_r-C_j)v^{n-k+1}\\
+    &\iff (F_r-C_j)v^{n-k+1} =0\\
+    &\iff F_rC_j = 0 \textit{ pues } v^{n-k+1}>0\\
+    &\iff F_r=C_j\\
+    &\iff \textit{ El bono se compara a la par}
+\end{align*}
+Que $F_r=C_j$ es poco común, lo normal es que $F_r<C_j$ ó $F_r>C_j$
+
+\textcolor{purple}{$\bullet$} \begin{align*}
+    F_r>I_k &\iff F_r> F_r - (F_r-C_j)v^{n-k+1}\\
+    &\iff (F_r-C_j)v^{n-k+1} >0\\
+    &\iff F_r-C_j>0 \textit{ pues }v^{n-k+1}>0\\
+    &\iff F_r>C_j\\
+    &\iff \textit{ El bono se compra con premio}
+\end{align*}
+
+\textcolor{purple}{$\bullet$} \begin{align*}
+    F_r<I_k &\iff F_r< F_r - (F_r-C_j)v^{n-k+1}\\
+    &\iff (F_r-C_j)v^{n-k+1} <0\\
+    &\iff F_r-C_j<0 \textit{ pues }v^{n-k+1}>0\\
+    &\iff F_r<C_j\\
+    &\iff \textit{ El bono se compra con descuento}
+\end{align*}
+
+\textit{Observaciones importantes}
+\begin{enumerate}
+    \item La aplicación $k\longrightarrow \ax{\angl{n-k}}$ es decreciente
+    \item Recuérdese que $OB_0 = B_0 =P$ y $OB_n=B_n=C$
+    \item \textit{Veamos cuánto vale}\begin{align*}
+        OB_k& - OB_{k+1}\\
+        &= [C+(F_r-C_j)\ax{\angl{n-k}}] - [C+(F_r-C_j)\ax{\angl{n-k+1}}]\\
+        &= (F_r-C_j)[\ax{\angl{n-k}} - \ax{\angl{n-k+1}}]\\
+        &= (F_r-C_j)[v+v^2+\dotsc+v^{n-k+1} + v^{n-k}\\
+        &\quad -(v+v^2+\dotsc+v^{n-k+1}]\\
+        &= (F_r-C_j)v^{n-k} = (F_r-C_j)(1+j)^{-(n-k)}
+    \end{align*}
+    \item \begin{align*}
+        OB_k &> OB_{k+1} \iff OB_k-OB_{k+1} >0\\
+        &\iff (F_r-C_j)v^{n-k} >0 \iff F_rC_j>0\\
+        &\iff F_r>C_j \iff \textit{ El bono se compra \textcolor{red}{con premio}}
+    \end{align*}\\
+    Es decir, la aplicación $k\longrightarrow OB_k$ es decreciente $\iff$ El bono se compra con \textcolor{red}{con premio}\\
+    \textcolor{purple}{$\bullet$} Es decir que si el bono se compra con premio, el valor en libros del bono va de $B_0=P$ ó $B_n=C$ decrecientemente ($i.e. P>C$)\\
+    \textcolor{purple}{$\bullet$} Como $F_r>C_j$, entonces $F_r>I_k$; es decir que, a través del cupón el emisor del bono pago periódicamente más interés del que debería. Por lo tanto, al vencimiento, el emisor paga $C$ que es \textcolor{red}{menos} dinero que la deuda original $P$\\
+    \textcolor{purple}{$\bullet$} Como $k\longrightarrow OB_k$ es decreciente, el \textit{book value} se va ajustando gradualmente hacia abajo. Este proceso se conoce como \textcolor{red}{\underline{amortización del premio}} ó \textcolor{red}{\underline{writing down}}\\
+    \textcolor{purple}{$\bullet$} A $P_k$ se conoce como \textcolor{red}{\underline{cantidad de amortización del premio}}
+    \item \begin{align*}
+        OB_k &< OB_{k+1} \iff OB_k-OB_{k+1} <0\\
+        &\iff (F_r-C_j)v^{n-k} <0 \iff F_rC_j<0\\
+        &\iff F_r<C_j \iff \textit{ El bono se compra \textcolor{magenta}{con descuento}}
+    \end{align*}\\
+    Es decir, la aplicación $k\longrightarrow OB_k$ es creciente $\iff$ El bono se compra con \textcolor{magenta}{con descuento}\\
+    \textcolor{purple}{$\bullet$} Es decir que si el bono se compra con descuento, el valor en libros del bono va de $B_0=P$ ó $B_n=C$ crecientemente ($i.e. P<C$)\\
+    \textcolor{purple}{$\bullet$} Como $F_r<C_j$, entonces $F_r<I_k$; es decir que, a través del cupón el emisor del bono paga periódicamente menos interés del que debería. Por lo tanto, al vencimiento, el emisor paga $C$ que es \textcolor{magenta}{más} dinero que la deuda original $P$\\
+    \textcolor{purple}{$\bullet$} Como $k\longrightarrow OB_k$ es creciente, el \textit{book value} se va ajustando gradualmente hacia arriba. Este proceso se conoce como \textcolor{magenta}{\underline{amortización del descuento}} ó \textcolor{magenta}{\underline{writing up}}\\
+    \textcolor{purple}{$\bullet$} A $P_k$ se le conoce como \textcolor{magenta}{\underline{cantidad de amortización del descuento}}
+\end{enumerate}
+\textcolor{purple}{Moraleja: Es muy importante la reacción que hay entre $F_r$ y $C_j$}
+$$\textcolor{purple}{F_r=C_j, F_r<C_j,F_r>C_j}$$
+
+\end{document}
