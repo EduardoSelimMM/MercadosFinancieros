@@ -1,0 +1,658 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Amortización}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+\chapter*{Amortización}
+
+Vamos a considerar una deuda $(L)$ que se paga a través de pagos periódicos $R_1,...,R_n$.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8356158978195851] 
+\draw    (110.53,171.9) -- (332,171.9) ;
+%Straight Lines [id:da7595920908828209] 
+\draw    (160.37,167.23) -- (160.37,177.4) ;
+%Straight Lines [id:da7496990964840667] 
+\draw    (119.37,167.23) -- (119.37,177.4) ;
+%Straight Lines [id:da2789330994052034] 
+\draw    (200.37,167.23) -- (200.37,177.4) ;
+%Straight Lines [id:da37212264745734736] 
+\draw    (279.37,167.23) -- (279.37,177.4) ;
+%Straight Lines [id:da41753727553012154] 
+\draw    (319.37,167.73) -- (319.37,177.9) ;
+
+% Text Node
+\draw (225.13,177.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (114.43,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (154.93,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (195.93,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (260.33,181.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (315.33,180.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (152.43,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{1}$};
+% Text Node
+\draw (192.93,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{2}$};
+% Text Node
+\draw (266.93,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n-1}$};
+% Text Node
+\draw (313.43,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+% Text Node
+\draw (113.43,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Es decir, la deuda se pagará en un plazo de $n$ periodos. Sobre esta deuda, se supondrá que se cobre una tasa de interés efectiva por periodo $j$.
+
+Entonces,
+$$ L=VP(Pagos) = R_1(1+j)^{-1} + R_2(1+j)^{-2} +...+ R_n(1+j)^{-n} $$
+los objetivos que tendremos son:
+\begin{itemize}
+    \item[(i)] Ver cómo evoluciona el pago de la deuda \textit{i.e.} como va disminuyendo la deuda.
+    \begin{center}
+        
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da5228221273014383] 
+\draw    (275,124) -- (275,143.07) ;
+\draw [shift={(275,145.07)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (136,103.4) node [anchor=north west][inner sep=0.75pt]    {$Amortización$};
+% Text Node
+\draw (231,104.4) node [anchor=north west][inner sep=0.75pt]    {$\sim $};
+% Text Node
+\draw (252,104.4) node [anchor=north west][inner sep=0.75pt]    {$mortis$};
+% Text Node
+\draw (158,144.4) node [anchor=north west][inner sep=0.75pt]    {$"Darle\ muerte\ a\ una\ deuda"$};
+
+
+\end{tikzpicture}
+
+    \end{center}
+    \item[(ii)] En cada pago hay una componente de pago de interés y otra de pago de la deuda original $(k)$. Estudiaremos como evoluciona dicha división. Intuitivamente, al principio se pagan muchos intereses pero esto hay que verificarlo
+\end{itemize}
+
+\textcolor{violet}{Justo después de hacer el k-ésimo pago. ¿Cuánto debo aún?}
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da35181073981892275] 
+\draw    (110.53,171.9) -- (386,171.9) ;
+%Straight Lines [id:da9787814630513413] 
+\draw    (160.37,167.23) -- (160.37,177.4) ;
+%Straight Lines [id:da1908165720202636] 
+\draw    (371.87,167.07) -- (371.87,177.23) ;
+%Straight Lines [id:da23477072503007512] 
+\draw    (119.37,167.23) -- (119.37,177.4) ;
+%Straight Lines [id:da5802038015158612] 
+\draw    (200.37,167.23) -- (200.37,177.4) ;
+%Straight Lines [id:da7136136954245811] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ]   (265.37,167.73) -- (265.37,177.9) ;
+%Straight Lines [id:da16372040021263212] 
+\draw [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ]   (305.87,167.23) -- (305.87,177.4) ;
+%Straight Lines [id:da7891392213322413] 
+\draw [color={rgb, 255:red, 0; green, 36; blue, 254 }  ,draw opacity=1 ]   (289,127) -- (275.66,164.85) ;
+\draw [shift={(275,166.73)}, rotate = 289.41] [color={rgb, 255:red, 0; green, 36; blue, 254 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2290955057502102] 
+\draw    (335.87,168.07) -- (335.87,178.23) ;
+%Curve Lines [id:da8727125027808305] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (304,200.73) .. controls (294.35,209.42) and (286.56,208.79) .. (270.75,201.55) ;
+\draw [shift={(269,200.73)}, rotate = 25.2] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da6062317641965014] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (334,200.73) .. controls (326.16,210.53) and (295.27,224.17) .. (269.57,211.54) ;
+\draw [shift={(268,210.73)}, rotate = 28.3] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da725180283500778] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (370,201.73) .. controls (365.1,214.47) and (294.89,237.78) .. (271.38,223.65) ;
+\draw [shift={(270,222.73)}, rotate = 36.03] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (225.13,177.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (114.43,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+% Text Node
+\draw (154.93,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (195.93,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (261.33,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$k$};
+% Text Node
+\draw (289.83,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$k+1$};
+% Text Node
+\draw (365.33,180.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (326.63,179) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (152.43,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{1}$};
+% Text Node
+\draw (192.93,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{2}$};
+% Text Node
+\draw (256.43,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$R_{k}$};
+% Text Node
+\draw (297.43,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 189; green, 16; blue, 224 }  ,opacity=1 ]  {$R_{k+1}$};
+% Text Node
+\draw (363.43,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+% Text Node
+\draw (289.93,113.2) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 13; blue, 255 }  ,opacity=1 ]  {$?$};
+\end{tikzpicture}
+\end{center}
+
+\textcolor{violet}{Opción 1:}\\
+\textcolor{violet}{Traemos hasta este punto los pagos que me hacen falta}
+
+\begin{align*}
+    R_{k+1}(1+j)^{-1} + R_{k+2}(1+j)^{-2} +& ... + R_{k+n}(1+j)^{-(n-k)}\\
+    &= \sum_{m=1}^{n-k} R_{k+m}(1+j)^{-m} \\
+    &:= OB_k^{[P]} \longrightarrow \textit{Outstanding Balance (Justo después del k-ésimo pago)}
+\end{align*}
+
+\textcolor{purple}{\textit{Outstanding Balance} $\longrightarrow$ Saldo restante $\longrightarrow$ Saldo insoluto}
+
+Y el símbolo $[P]$ no es un exponente sino la $"P"$ de \textit{prospectivo}.
+
+$OB_k^{[P]}$ es el dinero que me hace falta liquidar, justo después del k-ésimo pago. Es dinero que tendría que pagar si decidiera liquidar completamente la deuda justo después del k-ésimo pago.
+$$\textcolor{purple}{\boxed{OB_k^{[P]} = \sum_{m=1}^{n-k} R_{k+m}(1+j)^{-m}}}$$
+
+\textcolor{violet}{Opción 2:}\\
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da5499245761224737] 
+\draw    (99.53,151.9) -- (463.53,151.9) ;
+%Straight Lines [id:da6594773661511151] 
+\draw    (149.37,147.23) -- (149.37,157.4) ;
+%Straight Lines [id:da9097007824932578] 
+\draw    (414.87,147.07) -- (414.87,157.23) ;
+%Straight Lines [id:da9581280332016522] 
+\draw    (108.37,147.23) -- (108.37,157.4) ;
+%Straight Lines [id:da8036454305067346] 
+\draw    (189.37,147.23) -- (189.37,157.4) ;
+%Straight Lines [id:da33450716326207675] 
+\draw    (268.37,147.23) -- (268.37,157.4) ;
+%Straight Lines [id:da009127366358110622] 
+\draw    (308.37,147.73) -- (308.37,157.9) ;
+%Straight Lines [id:da137153168162938] 
+\draw    (348.87,147.23) -- (348.87,157.4) ;
+%Straight Lines [id:da01280455316148199] 
+\draw    (459.37,147.07) -- (459.37,157.23) ;
+%Curve Lines [id:da7320596292152943] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (135,191.07) .. controls (143.87,204.86) and (271.1,211.86) .. (306.45,202.51) ;
+\draw [shift={(308,202.07)}, rotate = 163.14] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da22509946546873338] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (219,182.07) .. controls (227.87,195.86) and (273.6,202.86) .. (306.51,193.51) ;
+\draw [shift={(308,193.07)}, rotate = 163.14] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9157101673895953] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (267,179.07) .. controls (279.29,186.63) and (295.14,185.26) .. (306.13,181.71) ;
+\draw [shift={(308,181.07)}, rotate = 160.02] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3813677527321597] 
+\draw [color={rgb, 255:red, 254; green, 0; blue, 0 }  ,draw opacity=1 ]   (334,106) -- (320.66,143.85) ;
+\draw [shift={(320,145.73)}, rotate = 289.41] [color={rgb, 255:red, 254; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (214.13,157.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (104.43,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (143.93,161.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (184.93,161.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (252.33,162.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (398.33,161.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (304.33,162.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (332.83,162.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (453.33,160.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (369.63,159) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (141.43,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{1}$};
+% Text Node
+\draw (181.93,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{2}$};
+% Text Node
+\draw (260.43,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k-1}$};
+% Text Node
+\draw (301.43,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k}$};
+% Text Node
+\draw (340.43,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k+1}$};
+% Text Node
+\draw (404.93,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n-1}$};
+% Text Node
+\draw (451.43,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+% Text Node
+\draw (103.43,177.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+
+
+\end{tikzpicture}
+
+\end{center}
+Otra forma de saber cuánto debo justo después de hacer el k-ésimo pago es repectivamente lo que debo sería:
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Free Drawing [id:dp6557783133807481] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75] [line join = round][line cap = round] (156.33,158.73) .. controls (156.33,161.29) and (165.19,163.69) .. (168.33,163.73) .. controls (194.67,164.07) and (221.08,164.75) .. (247.33,162.73) .. controls (278.92,160.3) and (308.79,159.19) .. (342.33,159.73) .. controls (350.66,159.87) and (361.9,160.86) .. (370.33,162.73) .. controls (373.68,163.48) and (374.33,166.73) .. (376.33,166.73) ;
+%Shape: Free Drawing [id:dp996569216822627] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75] [line join = round][line cap = round] (376.33,165.73) .. controls (376.33,155.59) and (408.38,161.07) .. (418.33,162.73) .. controls (456.75,169.14) and (536.47,167.01) .. (564.33,166.73) .. controls (567.06,166.71) and (588.15,162.46) .. (590.33,161.73) .. controls (592.71,160.94) and (596.34,156.73) .. (598.33,156.73) ;
+
+% Text Node
+\draw (68,124.4) node [anchor=north west][inner sep=0.75pt]    {$L( 1+j)^{k} -\Bigl[ R_{k} +R_{k-1}( 1+j) +R_{k-2}( 1+j)^{2} +...+R_{2}( 1+j)^{k-2} +R_{1}( 1+j)^{k-1}\Bigr]$};
+% Text Node
+\draw (78.88,168.45) node [anchor=north west][inner sep=0.75pt]  [rotate=-270.16]  {$\Bigl\{$};
+% Text Node
+\draw (161.8,195.48) node [anchor=east] [inner sep=0.75pt]  [font=\footnotesize]  {$ \begin{array}{l}
+Si\ no\ hubiese\ hecho\ \\
+ningún\ pago,\ en\ k\ \\
+esto\ es\ lo\ que\ debiera
+\end{array}$};
+% Text Node
+\draw (458.8,216.55) node [anchor=south east] [inner sep=0.75pt]  [font=\footnotesize]  {$ \begin{array}{l}
+Pero\ sí\ hice\ algunos\ pagos.\ \\
+De\ hecho\ hice\ k\ pagos
+\end{array}$};
+
+
+\end{tikzpicture}
+\end{center}
+Esta suma tiene $k$ sumandos
+$$= L(1+j)^k - \sum_{t=1}^k R_t(1+j)^{k-t} \textcolor{olive}{= OB_k^{[R]}}$$
+
+\textcolor{olive}{Y $"R"$ de \textit{retrospectivo}.}
+
+$$\textcolor{olive}{\boxed{OB_k^{[R]} = L(1+j)^k - \sum_{t=1}^k R_t(1+j)^{k-t}}}$$
+
+Resulta ser que $OB_k^{[R]} = OB_k^{[P]}$.\\
+¿Les hace sentido? Sí $\longrightarrow$ Ambos representan cuánto debe justo después del k-ésimo pago
+
+\underline{\textit{Demostración}:}
+$$\textcolor{purple}{\boxed{OB_k^{[P]} = \sum_{m=1}^{n-k} R_{k+m}(1+j)^{-m}}}$$
+$$\textcolor{olive}{\boxed{OB_k^{[R]} = L(1+j)^k - \sum_{t=1}^k R_t(1+j)^{k-t}}}$$
+
+Voy a partir de la expresión de $OB_k^{[R]}$
+\begin{align*}
+    OB_k^{[R]} &= L(1+j)^{-k} - \sum_{t=1}^k R_t(1+j)^{k-t}\\
+    &= \underbrace{\Big[\sum_{t=1}^n R_t(1+j)^{-t}\Big]}_{\textcolor{blue}{L}}(1+j)^k - \sum_{t=1}^k R_t(1+j)^{k-t}\\
+    &= \sum_{t=1}^n R_t(1+j)^{k-t} - \sum_{t=1}^k R_t(1+j)^{k-t} = \sum_{t=k+1}^nR_t(1+j)^{k-t}\\
+    &= R_{k+1}(1+j)^{k-(k+1)} + R_{k+1}(1+j)^{k-(k+2)} +...+ R_n(1+j)^{k-n}\\
+    &= R_{k+1}(1+j)^{-1} + R_{k+1}(1+j)^{-2} +...+ R_n(1+j)^{-(n-k)} \\
+    &= OB_k^{[P]}
+\end{align*}
+$$\textcolor{blue}{\boxed{\therefore OB_k^{[P]} = OB_k^{[R]} =^{net} OB_k}}$$
+
+Veamos, cómo evoluciona el pago de la deuda e intereses
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da6419481488407485] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (130.53,191.9) -- (406,191.9) ;
+%Straight Lines [id:da95743803994825] 
+\draw    (180.37,187.23) -- (180.37,197.4) ;
+%Straight Lines [id:da6852978614179008] 
+\draw    (391.87,187.07) -- (391.87,197.23) ;
+%Straight Lines [id:da19250247972230783] 
+\draw    (139.37,187.23) -- (139.37,197.4) ;
+%Straight Lines [id:da6403267629282303] 
+\draw    (220.37,187.23) -- (220.37,197.4) ;
+%Straight Lines [id:da3463985009107222] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (285.37,187.73) -- (285.37,197.9) ;
+%Straight Lines [id:da5569015379889471] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (325.87,187.23) -- (325.87,197.4) ;
+
+% Text Node
+\draw (245.13,197.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (134.43,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+% Text Node
+\draw (174.93,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (215.93,201.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (281.33,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$k$};
+% Text Node
+\draw (309.83,202.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$k+1$};
+% Text Node
+\draw (385.33,200.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (346.63,199) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (172.43,169.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{1}$};
+% Text Node
+\draw (212.93,169.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{2}$};
+% Text Node
+\draw (276.43,169.7) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$R_{k}$};
+% Text Node
+\draw (317.43,169.2) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$R_{k+1}$};
+% Text Node
+\draw (383.43,169.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+\end{tikzpicture}
+\end{center}
+\newpage
+En $\varnothing$ yo tomo una de una deuda de $\$L$:\\
+¿Cuánto debo después de un periodo?
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da23500093631500363] 
+\draw    (314,150) -- (300.61,166.19) ;
+\draw [shift={(299.33,167.73)}, rotate = 309.59] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3139017266672419] 
+\draw    (356,150) -- (368.13,166.13) ;
+\draw [shift={(369.33,167.73)}, rotate = 233.06] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (233,131.4) node [anchor=north west][inner sep=0.75pt]    {$L( 1+j) \ =\ L\ +\ L_{j}$};
+% Text Node
+\draw (275,170.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$ \begin{array}{l}
+Deuda\\
+original
+\end{array}$};
+% Text Node
+\draw (356,171.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$ \begin{array}{l}
+Cantidad\\
+de\ \textit{interés}
+\end{array}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+\textcolor{magenta}{Nota: $I_1 := L_j \longrightarrow$ intereses después de un periodo}\\
+\textcolor{magenta}{$\rightarrow$} Pero yo pagué $R_1$\\
+Este primer pago $R_1$, ¿cuánto de la deuda original pagué?
+\begin{align*}
+    \textcolor{magenta}{P_1 &:=} R_1\textcolor{magenta}{(pago)} - L_j\textcolor{magenta}{(intereses)}\\
+    &\textcolor{magenta}{\longrightarrow \textit{Capital pagado o deuda original pagada en el primer pago}}\\
+    &= R_1 - I_1
+\end{align*}
+
+¿Cuánto debo justo después de hacer el pago $R_1$?
+$$L(1+j) - R_1 = \textcolor{magenta}{OB_1^{[R]}} = OB_1$$
+
+Pero también $OB_1 = L\textcolor{magenta}{\textit{(Deuda original)}} -P_1\textcolor{magenta}{\textit{(Ya pagué de capital)}}$
+
+¿Cuánto debo después de otro periodo?\\
+$i.e.$ ¿cuánto debo en el segundo periodo?
+
+$$OB_1(1+j) = OB_1 + \underbrace{OB_1\cdot j}_{\textit{interés}}$$
+
+$I_2 := OB_1\cdot j$. Interés que se debe en el 2do periodo.\\
+\textcolor{magenta}{$\longrightarrow$} Pero yo pagué $R_2$\\
+¿Cuánto de la deuda pagué? \textcolor{magenta}{Capital pagado en el 2do pago}
+$$P_2 := R_2 - I_2$$
+¿Cuánto debo después de hacer el segundo pago?
+$$OB_2 := \underbrace{OB_1}_{\textit{Lo que debía}} - \underbrace{P_2}_{\textit{Capital que ya pagué}}$$
+
+¿Cuánto debo después de otro periodo?\\
+$i.e.$ ¿cuánto debo en el tercer periodo?
+
+$$OB_2(1+j) = OB_2 + \underbrace{OB_2\cdot j}_{\textit{interés}}$$
+
+$I_3 := OB_2\cdot j$. Interés que se debe en el 3er periodo.\\
+\textcolor{magenta}{$\longrightarrow$} Pero yo pagué $R_3$\\
+¿Cuánto de la deuda pagué? \textcolor{magenta}{Capital pagado en el 3er pago}
+$$P_3 := R_3 - I_3$$
+¿Cuánto debo después de hacer el tercer pago?
+$$OB_3 := \underbrace{OB_2}_{\textit{Lo que debía}} - \underbrace{P_3}_{\textit{Capital que ya pagué}}$$
+
+En general, 
+\begin{align*}
+    OB_k &= OB_{k-1} - P_k\\
+    I_k &= OB_{k-1}\cdot j\\
+    P_k &= R_k - I_k
+\end{align*}
+
+\textit{\textbf{Notación:}} \begin{align*}
+    OB_0 &= \textit{ Saldo al momento } 0\\
+    &= L \textit{ (la deuda original)}
+\end{align*}
+
+\begin{center}
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccc}
+\begin{tabular}[c]{@{}c@{}}\# de\\ pago\end{tabular} &
+  Pago &
+  Interés &
+  \begin{tabular}[c]{@{}c@{}}Principal\\ pagado\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Saldo\\ Insoluto\end{tabular} \\ \hline
+$0$      & -         & -                         & -                         & $OB_0=L$        \\
+$1$      & $R_1$     & $I_1=OB_0\cdot j$         & $P_1=R_1-I_1$             & $OB_1=OB_0-P_1$ \\
+$2$      & $R_2$     & $I_2=OB_1\cdot j$         & $P_2=R_2-I_2$             & $OB_2=OB_1-P_2$ \\
+$3$      & $R_3$     & $I_3=OB_2\cdot j$         & $P_3=R_3-I_3$             & $OB_3=OB_2-P_3$ \\
+$\vdots$ & $\vdots$  & $\vdots$                  & $\vdots$                  & $\vdots$        \\
+$k$ &
+  $R_k$ &
+  $I_k=OB_{k-1}\cdot j$ &
+  $P_k=R_k-I_k$ &
+  $OB_k = \sum_{m=1}^{n-k}R_{k+m}(1+j)^{-m}$ \\
+$k+1$    & $R_{k+1}$ & $I_{k+1}=OB_k\cdot j$     & $P_{k+1}=R_{k+1}-I_{k+1}$ & $OB_{k+1}$      \\
+$\vdots$ & $\vdots$  & $\vdots$                  & $\vdots$                  & $\vdots$        \\
+$n-1$    & $R_{n-1}$ & $I_{n-1}=OB_{n-2}\cdot j$ & $P_{n-1}=R_{n-1}-I_{n-1}$ & $OB_{n-1}$      \\
+$n$      & $R_n$     & $I_n=OB_{n-1}\cdot j$     & $P_n=R_n-I_n$             & $OB_n$         
+\end{tabular}
+\end{table}
+\end{center}
+Para obtener el \textit{k-ésimo} renglón, necesitamos todos los renglones anteriores.
+\\
+
+Todas estas expresiones se pueden simplificar \underline{para un caso particular común}:
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da5037925778310132] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (182.53,136.9) -- (458,136.9) ;
+%Straight Lines [id:da1267063308829146] 
+\draw    (232.37,132.23) -- (232.37,142.4) ;
+%Straight Lines [id:da9299340576405227] 
+\draw    (443.87,132.07) -- (443.87,142.23) ;
+%Straight Lines [id:da054886755296365] 
+\draw    (191.37,132.23) -- (191.37,142.4) ;
+%Straight Lines [id:da8485901979348436] 
+\draw    (272.37,132.23) -- (272.37,142.4) ;
+%Straight Lines [id:da14644571226779468] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (337.37,132.73) -- (337.37,142.9) ;
+%Straight Lines [id:da7502557662539163] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (408.87,132.23) -- (408.87,142.4) ;
+
+% Text Node
+\draw (297.13,142.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (186.43,146.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (226.93,146.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (267.93,146.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (333.33,147.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$k$};
+% Text Node
+\draw (392.83,145.8) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ]  {$n-1$};
+% Text Node
+\draw (439.33,145.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (356.63,143) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (226.43,114.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R$};
+% Text Node
+\draw (186.43,162.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+% Text Node
+\draw (266.43,114.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R$};
+% Text Node
+\draw (401.43,113.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R$};
+% Text Node
+\draw (438.43,113.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R$};
+% Text Node
+\draw (331.43,113.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Una deuda $L$ que se paga mediante $n$ pagos iguales cada uno de cantidad $R$, entonces:
+$$L=R\cdot \ax{\angl{n} j} = VP(Pagos)$$
+Usando la notación anterior:
+\begin{itemize}
+    \item $R_1=R_2=\dotsc=R_n=R$
+    \item \begin{align*}
+        OB_k &= \sum_{m=1}^{n-k}R_{k+m}(1+j)^{-m} \\
+        &= \sum_{m=1}^{n-k}R(1+j)^{-m}\\
+        &= R\sum_{m=1}^{n-k}(1+j)^{-m}\\
+        &= R\big[(1+j)^{-1} + (1+j)^{-2}+\dotsc + (1+j)^{-(n-k)}\\
+        &= R\cdot \ax{\angl{n-k}j}\\
+        &\boxed{\therefore OB_k = R\cdot\ax{\angl{n-k}j}}
+    \end{align*}
+    \item \begin{align*} 
+        I_k &= OB_{k-1}\cdot j = R\ax{\angl{n-(k-1)}\cdot j}\\
+        &= R\ax{\angl{n-k+1}\cdot j} = R\bigg[\frac{1-(1+j)^{-(n-k+1)}}{j}\bigg]\cdot j\\
+        &= R[1-(1+j)^{-(n-k+1)}] = R[1-v^{n-k+1}]\\
+        &\boxed{\therefore I_k = R[1-(1+j)^{-(n-k+1)}] = R[1-v^{n-k+1}]}
+    \end{align*}
+    \item \begin{align*}
+        P_K &= R_k - I_k\\
+        &= R- R[1-(1+j)^{-(n-k+1)}]\\
+        &= R(1+j)^{-(n-k+1)}\\
+        &\boxed{\therefore P_k = R(1+j)^{-(n-k+1)} = Rv^{n-k+1}}
+    \end{align*}
+\end{itemize}
+
+\textit{Observación}:
+$$\frac{P_{k+m}}{P_k} = \frac{Rv^{n-(k+m)+1}}{Rv^{n-k+1}} = v^{-m} = (1+j)^m$$
+$$\Rightarrow \boxed{P_{k+m} = P_k(1+j)^m}$$
+\newpage
+Como en el caso general, estas cantidades se pueden poner en una tabla:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccc}
+\begin{tabular}[c]{@{}c@{}}\# de\\ pago\end{tabular} &
+  Pago &
+  Interés &
+  \begin{tabular}[c]{@{}c@{}}Principal\\ pagado\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Saldo\\ Insoluto\end{tabular} \\ \hline
+$0$      & -         & -                         & -                         & $OB_0=L=\textcolor{red}{R\cdot\ax{\angln j}}$                  \\
+$1$      & $R_1\textcolor{red}{=R}$   & $I_1=\textcolor{red}{R[1-(1+j)^{-n}]}$     & $P_1=\textcolor{red}{R(1+j)^{-n}}$         & $OB_1=\textcolor{red}{R\cdot\ax{\angl{n-1} j}}$               \\
+$2$      & $R_2\textcolor{red}{=R}$     & $I_2=\textcolor{red}{R[1-(1+j)^{-(n-1)}]}$         & $P_2=\textcolor{red}{R(1+j)^{-(n-1)}}$             & $OB_2=\textcolor{red}{R\cdot\ax{\angl{n-2} j}}$                                          \\
+$3$      & $R_3\textcolor{red}{=R}$     & $I_3=\textcolor{red}{R[1-(1+j)^{-(n-2)}]}$         & $P_3=\textcolor{red}{R(1+j)^{-(n-2)}}$             & $OB_3=\textcolor{red}{R\cdot\ax{\angl{n-3} j}}$                                          \\
+$\vdots$ & $\vdots$  & $\vdots$                  & $\vdots$                  & $\vdots$                                                 \\
+$k$      & $R_k\textcolor{red}{=R}$     & $I_k=\textcolor{red}{R[1-(1+j)^{-(n-k+1)}]}$     & $P_k=\textcolor{red}{R(1+j)^{-(n-k+1)}}$             & $OB_k = \textcolor{red}{R\cdot\ax{\angl{n-k} j}}$ \\
+$k+1$    & $R_{k+1}\textcolor{red}{=R}$ & $I_{k+1}=OB_k\cdot j$     & $P_{k+1}=R_{k+1}-I_{k+1}$ & $OB_{k+1}$   \\
+$\vdots$ & $\vdots$  & $\vdots$                  & $\vdots$                  & $\vdots$                                                 \\
+$n-1$    & $R_{n-1}\textcolor{red}{=R}$ & $I_{n-1}=OB_{n-2}\cdot j$ & $P_{n-1}=R_{n-1}-I_{n-1}$ & $OB_{n-1}$     \\
+$n$      & $R_n\textcolor{red}{=R}$     & $I_n=\textcolor{red}{R[1-(1+j)^{-1}]}$     & $P_n=\textcolor{red}{R(1+j)^{-1}}$             & $OB_n=\varnothing=\textcolor{red}{R\cdot\ax{\angl{n-n}} = R\ax{\angl{0}}}$ \\ \hline
+Total & \textcolor{olive}{A} & \textcolor{olive}{B} & \textcolor{olive}{C} & \textcolor{olive}{D} 
+
+\end{tabular}
+\end{table}
+
+\textcolor{red}{Para calcular el \textit{k-ésimo} renglón, sólo necesito el valor de $k$}
+
+Aunque no hacen mucho sentido, suelen sumarse algunas columnas. \textcolor{red}{¡No hace sentido, pues cada renglón está en distintos puntos del tiempo! Aún así es común sumarlas.}
+\begin{itemize}
+    \item \textcolor{olive}{A} $= nR$
+    \item \textcolor{olive}{B} \begin{align*}
+    &= \sum_{k=1}^nI_k = \sum_{k=1}^n(1+j)^{-(n-k+1)}\\
+    &= \sum_{k=1}^n R - R\sum_{k=1}^n(1+j)^{-(n-k+1)}\\
+    &= nR - R[(1+j)^{-n} + (1+j)^{-(n-1)} +\dotsc+ (1+j)^{-1}]\\
+    &= nR - R\cdot\textcolor{magenta}{\ax{\angln j}}
+\end{align*}
+    \item \textcolor{olive}{C} \begin{align*}
+    &= \sum_{k=1}^nP_k = \sum_{k=1}^n R(1+j)^{-(n-k+1)}\\
+    &= R\sum_{k=1}^n (1+j)^{-(n-k+1)}\\
+    &= \textcolor{magenta}{R\cdot\ax{\angln}}
+\end{align*}
+    \item \textcolor{olive}{D} \begin{align*}
+    &= \sum_{k=0}^{n-1}OB_k = \sum_{k=0}^{n-1} R\cdot\ax{\angl{n-k}j}\\
+    &= R\sum_{k=0}^{n-1} \cdot\ax{\angl{n-k}j}\\
+    &= R[\ax{\angln} + \ax{\angl{n-1}} +\dotsc + \ax{\angl{1}}]\\
+    &= R[\textcolor{magenta}{v+v^2+\dotsc+v^{n-2}+v^{n-1}+v^n}+\\
+    &\quad \textcolor{red}{v+v^2+^\dotsc+v^{n-2}+v^{n-1}}+\\
+    &\quad \textcolor{orange}{v+v^2+^\dotsc+v^{n-2}}+\\
+    &\quad\vdots +\\
+    &\quad v]\\
+    &= R[nv + (n-1)v^2 + (n-2)v^3 +\dotsc+1v^n]\\
+    &= R\textcolor{magenta}{(Da)\angln j}
+    \end{align*}
+\end{itemize}
+
+
+\end{document}
