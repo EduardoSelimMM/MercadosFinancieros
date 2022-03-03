@@ -1,0 +1,184 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Sinking Funds}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+\chapter*{Sinking Funds}
+Supóngase que se tiene una deuda de tamaño $L$ que cobra una tasa de interés efectiva por periodo de $j$. Supóngase que en lugar de pagar al prestamista ciertos pagos periódicos, se harán depósitos en un fondo independiente (que se conoce como \textit{sinking funds}), donde dicho fondo gana una tasa de interés $i$ efectiva por periodo. Lo único que se pagará al prestamista son los intereses de la deuda (a dichas cantidades se les conoce como servicio de la deuda). Al final del plazo de la deuda, se tendrá que tener el \textit{sinking fund} el monto para pagar la deuda.\\
+
+Supóngase que la deuda se paga mediantepagos periódicos en el \textit{sinking fund}, que se hacen por $n$ periodos, c/u al final de cada periodo, llamémosle $k_1,k_2,...,k_n$.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da9037271991859792] 
+\draw    (127,112.9) -- (385.33,112.9) ;
+%Straight Lines [id:da1848060452529643] 
+\draw    (176.83,108.23) -- (176.83,118.4) ;
+%Straight Lines [id:da4362072646185938] 
+\draw    (332.33,108.07) -- (332.33,118.23) ;
+%Straight Lines [id:da6513442818254145] 
+\draw    (135.83,108.23) -- (135.83,118.4) ;
+%Straight Lines [id:da4587518294838402] 
+\draw    (216.83,108.23) -- (216.83,118.4) ;
+%Straight Lines [id:da8852293567735553] 
+\draw    (276.83,108.23) -- (276.83,118.4) ;
+%Straight Lines [id:da4173964533143969] 
+\draw    (376.83,108.07) -- (376.83,118.23) ;
+
+% Text Node
+\draw (241.6,118.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (130.9,122.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (171.4,122.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (212.4,122.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (170.8,143.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k_{1}$};
+% Text Node
+\draw (315.8,122.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (273.8,122.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$l$};
+% Text Node
+\draw (370.8,121.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (287.1,120) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (211.8,143.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k_{2}$};
+% Text Node
+\draw (321.3,143.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k_{n-1}$};
+% Text Node
+\draw (370.3,143.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k_{n}$};
+% Text Node
+\draw (270.8,143.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k_{l}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{enumerate}
+    \item ¿Qué deben satisfacer los $k$'s ($i.e$ los depósitos en el \textit{sinking fund})?\\
+    El valor acumulado de $k_1,...,k_n$ debe ser la cantidad de la deuda original
+    \begin{align*}
+        L&= \textit{ Valor acumulado de los depósitos en el sinking fund}\\
+        L&= k_n+k_{n-1}(1+i) + k_{n-2}(1+j)^2 + \cdot + k_1(1+i)^{n-1}
+    \end{align*}
+    \item El prestatario paga al prestamista periódicamente sólo la cantidad de interés sobre la deuda original, esto se conoce como servicio de la deuda.\\
+    ¿De cuánto es esta cantidad periódica? $$L_j$$
+    Este pago del servicio de la deuda hace que no se deba más dinero (a causa de los intereses) y por lo tanto, sólo se tiene que juntar $L$ en el \textit{sinking fund}
+    \item ¿Cuánto desembolsa periódicamente el prestatario ($i.e.$ el que pide prestado)?\\
+    En el periodo $l$, el prestatario desembolsa
+    $$\underbrace{k_l}_{\textit{Depósito en el SF}} + \underbrace{L_j}_{\textit{Servicio de la deuda}}$$
+    \item Justo después del \textit{l-ésimo} depósito en el \textit{SF}, ¿cuánto debe el prestatario?\\
+    Es decir, si justo después del \textit{l-ésimo} pago, el prestatario sacará el dinero en el \textit{SK} e intentara pagar la deuda, ¿cuánto quedaría a deber?
+    \begin{align*}
+        \textcolor{red}{OB_l:&=} L - \textit{Valor acumulado de los depósitos en el SF}\\
+        &= L - \big(k_l + k_{l-1}(1+i) + k_{l-2}(1+i)^2 + \dotsc + k_2(1+i)^{l-2} + k_1(1+i)^{l-1}\big)\\
+        &= L - \sum_{m=1}^l k_m(1+i)^{l-m}
+    \end{align*}
+    De hecho,
+    $$\textcolor{red}{F_l:=} \sum_{m=1}^l k_m(1+i)^{l-m}$$
+    es el saldo en el \textit{SF} justo después del \textit{l-ésimo} depósito.\\
+    Todas estas cantidades suelen ponerse en una tabla, que se conoce como \textbf{tabla del sinking fund}.
+\end{enumerate}
+\begin{table}[h]
+\centering
+\begin{tabular}{cccccc}
+Periodo &
+  \begin{tabular}[c]{@{}c@{}}Servicio \\ de la deuda\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Depósito\\ en el \textbackslash{}textit\{SF\}\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Saldo en\\ el \textbackslash{}textit\{SF\}\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Interés ganado\\ por el \textbackslash{}textit\{SF\}\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Saldo insoluto\\ (Outstanding Balance)\end{tabular} \\ \hline
+$0$      & -        & -         & -         & -                        & $L=OB_0$             \\
+$1$      & $L_j$    & $k_1$     & $F_1=k_1$ & $I_1=\varnothing$        & $OB_1=L-k_1$         \\
+$2$      & $L_j$    & $k_2$     & $F_2$     & $I_2=F_1\cdot i$         & $OB_2=L-F_2$         \\
+$3$      & $L_j$    & $k_3$     & $F_3$     & $I_3=F_2\cdot i$         & $OB_3=L-F_3$         \\
+$\vdots$ & $\vdots$ & $\vdots$  & $\vdots$  & $\vdots$                 & $\vdots$             \\
+$l-1$    & $L_j$    & $k_{l-1}$ & $F_{l-1}$ & $I_{l-1}=F_{l-2}\cdot i$ & $OB_{l-1}=L-F_{l-1}$ \\
+$l$      & $L_j$    & $k_l$     & $F_l$     & $I_l=F_{l-1}\cdot i$     & $OB_l=L-F_l$         \\
+$\vdots$ & $\vdots$ & $\vdots$  & $\vdots$  & $\vdots$                 & $\vdots$             \\
+$n$      & $L_j$    & $k_n$     & $F_n$     & $I_n=F_{n-1}\cdot i$     & $OB_n=L-F_n=L-L=0$  
+\end{tabular}
+\end{table}
+
+El caso popular es cuando los depósitos en el \textit{SK} son iguales de cantidad $k$\\
+En este caso
+\begin{align*}
+    L&= \textit{ Valor acumulado de los depósitos}\\
+    &= k\cdot S{\angl{n}i} \textit{ i.e. }k=\frac{L}{S{\angl{n}i}}
+\end{align*}
+
+\textcolor{purple}{$\bullet$} ¿Cuál es el saldo en el \textit{SF} después del \textit{l-ésimo} depósito?
+$$F_l=k\cdot S{\angl{l}i}$$
+
+\textcolor{purple}{$\bullet$} ¿Cuál es el interés generado por el \textit{SF} en el \textit{l-ésimo} periodo?
+\begin{align*}
+    I_l &= F_{l-1}\cdot i = k\cdot S{\angl{l-1}i}\\
+    &= k\big[(1+i)^{l-1} -1\big]
+\end{align*}
+
+\textcolor{purple}{$\bullet$} ¿Cuál es el servicio de la deuda?\\
+Cuál es la cantidad periódica que se paga al prestamista por el concepto de interés?
+$$L_j$$
+
+\textcolor{purple}{$\bullet$} ¿De cuánto es el desembolso total periódico del prestatario?
+\begin{align*}
+    \underbrace{k}_{\textit{Depósito SF}} + \underbrace{L_j}_{\textit{Servicio de la deuda}} &= \frac{L}{S\angln i} + L_j\\
+    &= L\bigg(\frac{1}{S\angln i}+j\bigg)
+\end{align*}
+
+\textcolor{purple}{$\bullet$} ¿De cuánto es la deuda restante justo después del \textit{l-ésimo} pago?
+$$OB_l=L - F_l = L-k\cdot S\angl{l}i$$
+
+¿Qué pasa si $i=j$?\\
+\textcolor{cyan}{\textit{Veamos qué dicen las matemáticas al respecto...}}
+\begin{align*}
+    OB_l &= L-kS\angl{l}i = L-\bigg(\frac{L}{S\angln i}\bigg)S\angl{l}i\\
+    &= L\bigg(1-\frac{S\angl{l}i}{S\angln i}\bigg) = L\bigg(1- \frac{(1+i)^l-1}{(1+i)^n-1}\\
+    &= L \bigg( \frac{(1+i)^n - (1+i)^l}{(1+i)^n-1}\\
+    &= \frac{L(1+i)^n\big(1-(1+i)^{l-n}\big)}{(1+i)^n\big(1-(1+i))^{-n}\big)}\\
+    &= L\Bigg[\frac{1-(1+i)^{l-n}}{1-(1+i)^{-n}}\Bigg] = L\frac{\ax{\angl{n-l}i}}{\ax{\angln i}}
+\end{align*}
+
+\end{document}

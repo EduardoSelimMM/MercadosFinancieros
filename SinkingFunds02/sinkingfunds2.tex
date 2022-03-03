@@ -1,0 +1,103 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Sinking Funds}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+\chapter*{Sinking Funds 2}
+\textcolor{magenta}{Recordatorio:}
+\begin{multicols}{2}
+En amortización con pagos nivelados
+\begin{align*}
+    L &= R\cdot \ax{\angln j}\\
+    &i.e. \quad R= \frac{L}{\ax{\angln j}}
+\end{align*}
+
+$$OB_k^{\textit{Amort}} = R\cdot \ax{\angl{n-k}j}$$
+
+$$I_k^{\textit{Amort}} = OB_{k-1}^{\textit{Amort}}\cdot j$$
+
+\columnbreak
+
+En \textit{sinking funds} con depósitos nivelados
+\begin{align*}
+    L &= D S\angln i\\
+    &i.e.\quad D = \frac{L}{S\angln i}
+\end{align*}
+Servicio de la deuda: $L_J$\\
+Desembolso global periódico
+\begin{align*}
+    D+L_j &= \frac{L}{S\angln i} + L_j\\
+    &= L\bigg(\frac{1}{S\angln i} + j\bigg)
+\end{align*}
+$$OB_k^{\textit{SF}} = L- DS\angl{k}i$$
+$$I_k^{\textit{SF}} = OB_{k-1}^{\textit{SF}}\cdot i$$
+\end{multicols}
+
+¿Qué pasa si $i=j$?\\
+En \textit{sinking fund}, el desembolso global periódico
+\begin{align*}
+    D+ L_j &= \frac{L}{S\angln i} + L_j = L\bigg(\frac{1}{S\angln i} +j \bigg)\\
+    &= L\bigg(\frac{1}{S\angln \textcolor{red}{j}} +j \bigg)\\
+    &= L\bigg(\frac{1 + j\cdot S\angln j}{S\angln j} \bigg)\\
+    &= L\bigg[\frac{1+ (1+j)^n - 1}{S\angln j}\bigg]\\
+    &= L\bigg[\frac{(1+j)^n}{S\angln j}\bigg] = L \bigg[\frac{1}{(1+j)^n S\angln j}\bigg]\\
+    &= L\bigg[\frac{1}{\ax{\angln j}}\bigg] \\
+    &= \frac{L}{\ax{\angln j}} = \textcolor{red}{R \longrightarrow \text{¡El $R$ de amortización}!}
+\end{align*}
+
+Es decir, en el caso de que $i=j$, el desembolso periódico que hace el prestatario (el que pide prestado) es el mismo bajo amortización que bajo \textit{sinking fund}
+\begin{align*}
+    OB_k^{SF} &= L - DS\angl{k}i = L - \frac{L}{S\angln i}S\angl{k}i\\
+    &= L - \frac{L}{S\angln i}S\angl{k}i \frac{(1+i)^{-n}}{(1+i)^{-n}}\\
+    &= L - \frac{L S\angl{k}i (1+i)^{-n}}{\ax{\angln i}}\\
+    &= \frac{L}{\ax{\angln i}}\bigg[\ax{\angln i} - S\angl{k}i (1+i)^{-n}\bigg]\\
+    &= \frac{L}{\ax{\angln i}}\bigg[\ax{\angln i} - \big(1+(1+i)+\dotsc+(1+i)^{k-1}\big)(1+i)^{-n}\bigg]\\
+    &= \frac{L}{\ax{\angln i}}\bigg[\ax{\angln i} - (1+i)^{-n} - (1+i)^{-n+1}-\dotsc-(1+i)^{-n+k-1}\bigg]\\
+    &= \frac{L}{\ax{\angln i}}\bigg[\ax{\angln i} - (1+i)^{-(n-k+1)}-\dotsc- (1+i)^{-(n-1)}-(1+i)^{-n}\bigg]\\
+    &= \frac{L}{\ax{\angln i}}\bigg[\ax{\angl{n-k}i}\bigg]\\
+    &= \frac{L}{\ax{\angln \textcolor{red}{j}}}\cdot\ax{\angl{n-k}\textcolor{red}{j}} = \textcolor{red}{R}\cdot \ax{\angl{n-k}j}
+\end{align*}
+Es decir, si $j=i$
+$$OB_k^{SF} = L -DS\angl{k}i = R\cdot\ax{\angl{n-k}j} = OB_k^{Amort}$$
+$$\therefore OB_k^{SF} = OB_k^{Amort}$$
+$i.e.$ si $i=j$, entonces el saldo restante al final de cada periodo es el mismo bajo ambos métodos.\\
+También 
+$$I_k^{Amort} = OB_{k-1}^{Amort}\cdot j = OB_{k-1}^{SF}\cdot i = I_k^{SF}$$
+Es decir, si $i=j$, el interés que gana el \textit{SF} es el mismo que el que se paga de interés sobre la deuda.
+
+
+\end{document}
