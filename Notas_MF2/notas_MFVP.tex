@@ -1,0 +1,926 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Mercados Financieros y Valuación\\ de Proyectos}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+\chapter*{Análisis de Proyectos de inversión}
+
+
+\begin{definition} Un proyecto de inversión es un vector $\underline{c} = (c_0, c_1, ... , c_n)\in \mathbb{R}^{n+1}$ asociado a otro vector $\underline{t} = (t_0, t_1, ... , t_n)\in \mathbb{R}^{n+1}$, $n\in\mathbb{N}\cup\{\infty\}$ en el que $c_k :=A_k-B_k$.\\
+donde:
+\begin{itemize}
+    \item $A_k$ representa una entrada de efectivo al tiempo $t_k$
+    \item $B_k$ representa una salida de efectivo al tiempo $t_k$
+\end{itemize}
+\textit{i.e.} $c_k$ es el "ingreso neto" al tiempo $t_k$.
+\end{definition}
+
+\textit{Obs.} $c_k$ puede ser positivo, negativo o cero
+\begin{itemize}
+    \item $\underline{c}$ representa los pagos
+    \item $\underline{t}$ representa los tiempos
+\end{itemize}
+
+A un proyecto de inversión se le denota como $(\underline{c},\underline{t})$, es decir, no se puede hablar de un proyecto de inversión sin hablar del flujo de efectivo y los tiempos en los que ocurre cada pago.
+
+Ejemplos:
+\begin{itemize}
+    \item Bono cuponado:\\
+    $\underline{c} = (-P,-F_r,F_r,...,F_{r+c})$\\
+    $\underline{t} = (0,1,2,...,n)$
+    \item Depósito bancario\\
+    $\underline{c} = (-k,M)$\\
+    $\underline{t} = (0,t^*)$
+    \item Anualidad nivelada\\
+    $\underline{c} = (-Ra_{{m}i},-F_r,F_r,...,F_{r+c})$\\
+    $\underline{t} = (0,1,2,...,n)$
+\end{itemize}
+
+Dados 2 proytectos $(\underline{c}_I,\underline{t}_I)$ y $(\underline{c}_II,\underline{t}_II)$\\
+t\textit{¿Cuál es mejor?} No se puede hablar de un "mejor" proyecto en general. Siempre el mejor proyecto es dado a algún criterio elección como:
+
+\begin{itemize}
+    \item ¿Con cuál recupero más rápido mi inversión?
+    \item ¿Si necesito mucho flujo?
+    \item ¿Con cuál gano más?
+    \item ...
+\end{itemize}
+
+\textbf{Ejemplo.} Considerese los siguientes proyectos
+%Falta tabla con los proyectos
+
+Comparación dependiendo:\\
+1. En cuanto tiempo recupero mi inversión \\
+I: En 4 periodos ya recuperé la inversión inicial\\
+II: En 5 periodos ya recuperé mi inversión inicial
+$$\therefore I\geq_{PR} II$$
+\\
+
+1) Netamente cuánto dinero te da cada proyecto\\
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+
+%Straight Lines [id:da8186857307094206] 
+\draw    (92,141) -- (172.2,140.75) ;
+%Straight Lines [id:da2988911929087691] 
+\draw    (202,91) -- (282.2,90.75) ;
+
+\draw (126,22) node [anchor=north west][inner sep=0.75pt]   [align=left] {I};
+% Text Node
+\draw (236,22) node [anchor=north west][inner sep=0.75pt]   [align=left] {II};
+% Text Node
+\draw (110,52) node [anchor=north west][inner sep=0.75pt]   [align=left] {250(2)};
+% Text Node
+\draw (221,50) node [anchor=north west][inner sep=0.75pt]   [align=left] {180(8)};
+% Text Node
+\draw (106,77) node [anchor=north west][inner sep=0.75pt]   [align=left] {+280(2)};
+% Text Node
+\draw (220,75) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-} 900};
+% Text Node
+\draw (108,100) node [anchor=north west][inner sep=0.75pt]   [align=left] {+100};
+% Text Node
+\draw (110,124) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-}1000};
+% Text Node
+\draw (117,146) node [anchor=north west][inner sep=0.75pt]   [align=left] {160};
+% Text Node
+\draw (232,94) node [anchor=north west][inner sep=0.75pt]   [align=left] {540};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{center}
+$$ \therefore \phantom{abc}I \leq_{NM} II $$ 
+\end{center}
+
+
+\begin{definition}
+Un proyecto de inversión\\
+$\underline{c} = (C_0,C_1,\cdots, C_n) \in \mathbb{R}^{n+1}\phantom{abc} n\in \mathbb{N}\cup\{0\} \\
+\underline{t} = (0,t_1,\cdots, t_n) \in \mathbb{R}^{n+1}$\\ \\
+No necesariamente\\
+$\rightarrow |t_{j+1} - t_j | = 1 \\
+\rightarrow |t_{j+1} - t_j | = |t_{j+2} - t_{j+1} |$\\ \\
+i.e los tiempos no necesariamente son equidistantes. \\
+* Dijimos que hay varios criterios para decir cuándo un proyecto es mejor que otro.\\
+$\rightarrow$ Uno de ellos era cuanto tiempo en recuperar la inversión.\\ \\
+\end{definition}
+En el ejemplo. \\
+El tiempo en el que $\sum$activos $> \sum$pasivos \\
+\textbf{Ejemplo:}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (107.6,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (158.6,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (209.6,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+% Text Node
+\draw (259.6,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+% Text Node
+\draw (305.6,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+% Text Node
+\draw (356.6,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {5};
+% Text Node
+\draw (407.6,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {6};
+% Text Node
+\draw (456.6,46) node [anchor=north west][inner sep=0.75pt]   [align=left] {7};
+% Text Node
+\draw (506.6,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {8};
+% Text Node
+\draw (89.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-} 1000};
+% Text Node
+\draw (150.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {250};
+% Text Node
+\draw (247.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {280};
+% Text Node
+\draw (200.6,83) node [anchor=north west][inner sep=0.75pt]   [align=left] {250};
+% Text Node
+\draw (298.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {280};
+% Text Node
+\draw (347.6,83) node [anchor=north west][inner sep=0.75pt]   [align=left] {100};
+% Text Node
+\draw (407.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (460.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (506.6,83) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+% Text Node
+\draw (89.6,136) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-} 900};
+% Text Node
+\draw (149.6,135) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (200.6,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (250.6,136) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (300.6,135) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (350.6,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (399.6,135) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (450.6,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (496.6,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {180};
+% Text Node
+\draw (56.6,84) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (55.6,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+
+
+\end{tikzpicture}
+
+\end{center}
+\begin{center}
+    Periodo de recuperación 1 = 4 Periodos\\
+    Periodo de recuperación 2 = 5 Periodos
+\end{center}
+Entonces\\
+Sea $\underline{c} = (C_0,C_1,...,C_n)$ un proyecto de inversión tal que:
+$$C_0,C1,...,C_k <0 ,C_k,...,C_n >0$$
+Se define el periodo de recuperación:\\
+    $C_k<0$ pasivo/ salidas / egresos \\
+    $C_k>0$ activos / entradas / ingresos\\
+ $$t_c = min\big\{l:\sum_{j=0}^{k}C_j\leq \sum_{j=k+1}^l C_i\big\}$$ \\
+ Se define el periodo de recuperación de  $\underline{c}$ $t_{\underline{c}}$ como ``El más chico de los $l$ tal que pasa eso``.\\
+ \textbf{Ejemplo:}
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (126,154) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \underline{c}$};
+% Text Node
+\draw (143,151) node [anchor=north west][inner sep=0.75pt]   [align=left] {= (-100,-150,-5,200,120,0,180,100)};
+% Text Node
+\draw (172,133) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0 \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ 2 \ \ \ \ 3 \ \ \ \ \ \ \ 4 \ \ \ \ 5 \ \ \ \ 6 \ \ \ \ \ 7};
+\end{tikzpicture}
+\end{center}
+¿$t_{\underline{c}}$?\\
+$\sum$ pasivos = -255\\
+$t_{\underline{c}} = 4$, pues 200+120 $>$255\\
+\textbf{Ejemplo:}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (126,154) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \underline{c}$};
+% Text Node
+\draw (143,151) node [anchor=north west][inner sep=0.75pt]   [align=left] {= (-90,-90,-10,5,5,5,20,150,150,40,50)};
+% Text Node
+\draw (173,175) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0 \ \ \ \ 1 \ \ \ \ \ \ 2 \ \ 3 \ 4 \ 5 \ \ \ 6 \ \ \ \ \ 7 \ \ \ \ \ \ 8 \ \ \ \ \ \ 9 \ \ 10};
+
+
+\end{tikzpicture}
+
+\end{center}
+$t_{\underline{c}} = 8$\\
+$\sum$ pasivos = -190\\
+$t_{\underline{c}} = 8 $ pues 5 + 5 + 5 + 20 + 150 + 150 $>$ 190 \\ \\
+\textbf{Ejemplo:}
+\begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (126,154) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \underline{c}$};
+% Text Node
+\draw (143,151) node [anchor=north west][inner sep=0.75pt]   [align=left] {= (-100,-150,-5,200,120,0,180,100)};
+% Text Node
+\draw (172,133) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {0 \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ 2 \ \ \ \ 3 \ \ \ \ \ \ \ 4 \ \ \ \ 5 \ \ \ \ 6 \ \ \ \ \ 7};
+\end{tikzpicture}
+\end{center}
+¿$t_{\underline{c}}$?\\
+$\sum$ pasivos = -255\\
+$t_{\underline{c}} = 4$, pues 200+120 $>$255\\ \\
+\textbf{Ejemplo:}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (126,154) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \underline{c}$};
+% Text Node
+\draw (143,151) node [anchor=north west][inner sep=0.75pt]   [align=left] {= (-50,40,-30,20,20,-100,150) $\phantom{abc}\bigstar$};
+
+\end{tikzpicture}
+\end{center}
+¿$t_{\underline{c}}$?\\ \\
+No tiene sentido hablar de periodo de recuperación pues las salidas y entradas son itinerantes.\\ \\
+Si queremos extender la definición de periodo de recuperación para proyectos en los que no necesariamente las salidas ocurran primero y posteriormente las entradas.¿Qué harían?\\ \\
+Queremos definir
+
+$t=\alpha_1 t_1 + \alpha_2 t_2 + ... + \alpha_n t_n $ \phantom{abc} con \phantom{a}$\alpha_1 + ... + \alpha_n =1$\\ \\
+i.e $t$ es un promedio ponderado de los tiempos en los que se hace cada $C_k$
+\begin{itemize}
+    \item Primera propuesta
+    $$\alpha_k : = \frac{C_k}{\sum_{j=1}^n C_j}  \phantom{abcde} \alpha_1 + ... + \alpha_n = 1$$
+- No considera el valor del dinero en el tiempo \\
+- No considera intereses
+\item Segunda propuesta
+$$\alpha_k = \frac{C_k (1+j) ^{-tk}}{\sum_{j=1}^{n}C_j(1+i)^{-tj}}$$
+- Sí considera el valor del dinero en el tiempo \\
+- Sí considera intereses
+\end{itemize}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (99,42) node [anchor=north west][inner sep=0.75pt]   [align=left] {1a Propuesta};
+% Text Node
+\draw (68,74.4) node [anchor=north west][inner sep=0.75pt]    {$ter\ :=\ \frac{\sum\limits _{k\ =\ 1}^{n} C_{k} \ tk}{\sum\limits _{j\ =\ 1}^{n} C_{j}} \ $};
+% Text Node
+\draw (290,41) node [anchor=north west][inner sep=0.75pt]   [align=left] {2a Propuesta};
+% Text Node
+\draw (257,74.4) node [anchor=north west][inner sep=0.75pt]    {$\tilde{d} \ =\ t\ =\ \frac{\sum\limits _{k\ =\ 1}^{n} C_{k} \ ( 1+i)^{-tk} \ tk}{\sum\limits _{j\ =\ 1}^{n} C_{j} \ ( 1+i)^{-tj}} \ $};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+$\rightarrow$ A $t_{ET}$ se le conoce como tiempo ``equited time``.\\
+$\rightarrow$ A $\tilde{d}$ se le conoce como ``duración``.\\ \\
+Para el ejemplo $\bigstar$: 
+\begin{align*}
+  t_{ET} =& \frac{40(1)-30(2)+20(3)+20(4)-100(5) + 150(6)}{40-30+20+20-100+150}\\
+=& \frac{40-\cancel{60}+\cancel{60}+80-500+900}{100}\\
+=& 5.2
+\end{align*}
+En promedio tardamos 5.2 años en recuperar la inversión.\\ \\ 
+Para la duración hay que day una tasa de interés. \\
+Supongamos que en el ejemplo $\bigstar$ $i=3\%$
+$$\tilde{d} = \frac{40(103)^{-1}\cdot 1-30(103)^{-2}\cdot2+20(103)^{-3}\cdot 3+...+150(103)^{-6}\cdot 6}{40(103)^{-1}-30(103)^{-2}+20(103)^{-3}+...+150(103)^{-6}}$$\\
+\begin{definition}
+Con las mimas hipótesis de la definición del periodo de recuperación, definimos el periodo de recuperación modificado por la tasa $i$ como
+$$\tilde{t}_c := min \{ l : -\sum_{j=0}^k C_i(1+i)^{-tj} \leq \sum_{j=k+1}^n C_i(1+i)^{-tj}\}$$
+\end{definition}
+\textbf{Ejemplo:}\\
+En un bono cupón cero ¿$t_{\underline{c}}$?¿$t_{ET}$?¿$\tilde{d}$?\\
+$\underline{c} = (-p,c) \phantom{abc} t_{\underline{c}} = n$\\
+Pues $p=Cv^{\circ n}\overset{n}{\leq} C$
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (68,80.4) node [anchor=north west][inner sep=0.75pt]    {$t_{ET} =\frac{C\cdot n}{C} =\ n\ $};
+% Text Node
+\draw (214,79.4) node [anchor=north west][inner sep=0.75pt]    {$\tilde{d} =\frac{C\cdot V^{n} n}{CV^{n}} =\ n\ $};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{definition}
+Sea $\underline{C}=(C_0,C_1,...,C_n)$, $\underline{t}= (0,t_1,...,t_n)$ un proyecto de inversión. Se define el valor presente neto a la tasa $i$ del proyecto $\underline{C}$ como:
+\begin{align*}
+    \psi_{\underline{c}}(i)=& C_0 + C_1(1+i)^{-t_1}+C_2(1+i)^{-t_2}+...+C_n(1+i)^{-t_n}\\
+    =& \sum_{j=0}^{n}C_j(1+i)^{-t_j}
+\end{align*}
+\end{definition}
+\textbf{Ejemplo:}\\
+$\underline{C}= (-900,200,200,200,200,200)$
+
+    \begin{align*}
+      1)\phantom{abc} \psi_{\underline{c}}(5\%) =& -900+200(1.05)^{-1}+200(1.05)^{-2}+200(1.05)^{-3}+...+200(1.05)^{-5}\\
+        =& -900+ 200\ax{\angl{5}5\%}\\ %casita
+        =& -34.1046 \\ \\
+      2)\phantom{ab} \psi_{\underline{c}}(10\%) =& -900 +200 \ax{\angl{5}10\%}\\
+        =& -141.84 \\ \\
+      3) \phantom{abc} \psi_{\underline{c}}(1\%) =& -900+200 \ax{\angl{5}1\%}\\
+      = & 70.68
+    \end{align*}
+Existen tasas para el que $\psi_{\underline{c}}(i)>0$ y otras para las que $\psi_{\underline{c}}(i)<0$.\\
+\begin{definition}
+Se dice que el proyecto de inversión $\underline{C}$ es profitable a la tasa $i$, si 
+$$\psi_{\underline{c}}>0$$ 
+Es decir, si su valor presente neto (VPN) es positivo.
+\end{definition}
+\textbf{Ejemplo:}\\
+En el ejemplo anterior el proyecto no era profitable ni al 5$\%$, ni al 10$\%$. Pero sí profitable al 1$\%$.\\ \\
+\textit{Obs.}
+\begin{align*}
+    \psi_{\underline{c}}(i) > 0 \Leftrightarrow & \sum_{j=0}^{n}C_j(1+i)^{-tj} > 0\\
+    \Leftrightarrow & \sum_{j=0}^{n}(A_j-B_j)(1+i)^{-tj}>0\\
+    \Leftrightarrow & \sum_{j=1}^{n}A_j(1+i)^{-tj}>\sum_{j=1}^{n}B_j(1+i)^{-tj}\\
+    & \text{VP(Entrada de \$)} > \text{VP(Salida de \$)}
+\end{align*}
+\textbf{Ejemplo:} (continuación)\\
+$\underline{C} = (-900,200,200,200,200,200)$\\
+¿Existe $i \in \mathbb{R}$ tal que $\psi_{\underline{c}}(i) = 0$?
+\begin{align*}
+    \psi_{\underline{c}}(i) = 0 \Leftrightarrow & -900+200\ax{\angl{5}i\%} = 0\\
+    \Leftrightarrow & 200  \ax{\angl{5}i\%} = 900\\
+    \Leftrightarrow &  \ax{\angl{5}i\%} = 4.5\\
+    \Leftrightarrow & i = 3.618\%
+\end{align*}
+Si $i \in (0,0.03618)$ \phantom{abcde}
+$\psi_{\underline{c}}>0$\\
+Si $i \in (0.03618,\infty)$ \phantom{abcd}
+$\psi_{\underline{c}}<0$\\ \\
+Si un banco les ofreciera que una vez de entrar al proyecto de inversión, simplemente hiciera depósitos, ¿Qué tasa le tendrían que ofrecer? \\
+Tendría que ofrecer $i\in (0,0.3618)$\\
+\begin{definition}
+Dados 2 proyectos de inversión $\underline{C}^{I}$ y $\underline{C}^{II}$. Se prefiere al proyecto $\underline{C}^{I}$ en vez del proyecto $\underline{C}^{II}$ a la tasa $i$.
+$$\psi_{\underline{c}^I}(i) >\psi_{\underline{c}^{II}}(i)$$
+Se denota como:
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}_{I}$};
+% Text Node
+\draw (221,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (243,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}_{II}$};
+% Text Node
+\draw (215,100) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{VPN} ,i$};
+
+
+\end{tikzpicture}
+
+\end{center}
+\end{definition}
+\textbf{Ejemplo:}
+$$\underline{C}^{II} = (-900,1000)$$
+$\psi_{\underline{c}^{II}}(1\%) = -900 + 1000 (1.01)^{-1}=90.09$\\
+$\psi_{\underline{c}^{II}}(5\%)=-900 + 1000 (1.05)^{-1}= 52.38$\\
+$\psi_{\underline{c}^{II}}(10\%)=-900 + 1000 (1.10)^{-1}= 9.09$
+$$\underline{C}^{I} = (-900,200,...,200)$$
+$\psi_{\underline{c}^{I}}(1\%) = 70.68$\\
+$\psi_{\underline{c}^{I}}(5\%) = 34.1$\\
+$\psi_{\underline{c}^{I}}(10\%) = -141.84$
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\Rightarrow\underline{C}^{I}$};
+% Text Node
+\draw (230,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (255,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (223,100) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{VPN} ,1\%$};
+
+
+\end{tikzpicture}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\Rightarrow\underline{C}^{I}$};
+% Text Node
+\draw (230,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (255,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (223,100) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{VPN} ,5\%$};
+
+
+\end{tikzpicture}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\Rightarrow\underline{C}^{I}$};
+% Text Node
+\draw (230,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (255,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (223,100) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{VPN}$};
+
+
+\end{tikzpicture} \\ \\
+Existirá una tasa $i$ tal que:
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{I}$};
+% Text Node
+\draw (221,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (243,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (215,100) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{VPN} ,i$};
+
+
+\end{tikzpicture}\\
+Es equivalente \phantom{ab}
+$\psi_{\underline{c}^{I}}(i) \geq \psi_{\underline{c}^{II}}(i) $
+\begin{align*}
+     \Leftrightarrow & -900+200\ax{\angl{5}i} > -900+1000(1+i)^{-1}\\ 
+     \Leftrightarrow & 200 \ax{\angl{5}i} > 1000(1+i)^{-1}
+\end{align*}
+\begin{definition}
+Sean $\underline{C}^{I}$ y $\underline{C}^{II}$ dos proyectos de inversión. \\ \\
+1) Se dice que se prefiere a $\underline{C}^{I}$ en vez de $\underline{C}^{II}$, en periodo de recuperación si $t_{\underline{c}^{I}}<t_{\underline{c}^{II}}$\\
+Se denota como: 
+
+\begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{I}$};
+% Text Node
+\draw (221,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (243,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (197,99) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$PR$};
+
+
+\end{tikzpicture}
+\end{center}
+2) Se dice que se prefiere a $\underline{C}^{I}$ en vez de $\underline{C}^{II}$ en equated time si $t_{ET}^{I}<t_{ET}^{II}$\\
+Se denota como: 
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (185,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{I}$};
+% Text Node
+\draw (221,80.4) node [anchor=north west][inner sep=0.75pt]    {$\bigr\}$};
+% Text Node
+\draw (243,81.4) node [anchor=north west][inner sep=0.75pt]    {$\underline{C}^{II}$};
+% Text Node
+\draw (217,102) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\overline{ET}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+3) Se dice que se prefiere a  $\underline{C}^{I}$ en vez de  $\underline{C}^{II}$ en duración, si:
+\begin{align*}
+    \tilde{d}_{I,i} \leq \tilde{d}_{II,i}\\
+    \underline{C}^{I}\phantom{a} \Big \} \phantom{a} \underline{C}^{II}
+\end{align*}
+\end{definition}
+Cosas feas del CRITERIO VPN\\ \\
+1) $\psi_{\underline{c}}(i)$ es tediosa de calcular. \\
+2) Existen algunas $i$ tal que $\psi_{\underline{c}^{I}}(i)>\psi_{\underline{c}^{II}}(i)$ y otras que $\psi_{\underline{c}^{I}}(i)<\psi_{\underline{c}^{II}}(i)$\\ \\
+\textit{Obs.}
+\begin{align*}
+    \frac{\partial}{\partial i} \psi_{\underline{c}}(i) = & \sum_{j=0}^{n} C_j(1+i)^{-tj}\\
+    =&\frac{\partial}{\partial i}(C_0 + C_1 (1+i)^{-t_1}+...+ C_n(1+i)^{-t_n}\\
+    =& -C_1(1+i)^{-t_n-1}t_1-...-C_nt_n(1+i)^{-t_n-1}\\
+    =& -(1+i)^{-1}\cdot\tilde{d}\cdot\sum_{k=1}^{n}C_k(1+i)^{-tk}\\
+    =& -(1+i)^{-1}\cdot\tilde{d}[\psi_{\underline{c}}(i)-C]
+\end{align*}
+\newpage
+Recordatorio \\
+$\tilde{d} = \frac{\sum_{j=1}^{n}C_j t_j(1+i)^{-tj}}{\sum_{j=1}^{n}C_j(1+i)^{-tj}}$\\ \\
+Dijimos ya también
+\begin{align*}
+    \frac{\partial}{\partial i}\psi_{\underline{c}}(i) = & -(1+i)^{-1}\sum_{j=1}^{n}C_j t_j (1+i)^{-tj} = -(1+i)^{-1}[\tilde{d}\cdot\sum_{j=1}^{n}C_j(1+i)^{-tj}]\\
+    =& -(1+i)^{-1}\tilde{d}[\sum_{j=1}^{n}C_j(1+i)^{-tj}-C_0]\\
+    =& -(1+i)^{-1}\tilde{d}\cdot[\psi_{\underline{c}}(i)-C_0]= (1+i)\tilde{d}C_0-(1+i)^{-1}\tilde{d}\psi_{\underline{c}}(i)
+\end{align*}
+Entonces según la definición de derivada
+\begin{align*}
+\lim_{n \to \infty}\frac{\psi(i+h)-\psi(i)}{h}=(1+i)^{-1}\tilde{d}C_0-(1+i)^{-1}\tilde{d}\psi(i)
+\end{align*}
+Esto significa que para $h\approx0$
+\begin{align*}
+    \psi(i+h) -\psi(i) \approx h(1+i)^{-1}\cdot\tilde{d}\cdot C_0 - h(1+i)^{-1}\cdot\tilde{d}\cdot\psi(i)\\
+    \psi(i+h) \approx h(1+i)^{-1}\cdot\tilde{d}\cdot C_0 + \psi(i)[1-h(1+i)^{-1}\cdot \tilde{d}] 
+\end{align*}
+\textcolor{red}{NOTA:} $\tilde{d}_m$ se le conoce como duración modificada.\\
+\phantom{abc}\phantom{abc}\phantom{a}$\tilde{d}_m:= \frac{\tilde{d}}{1+i}$ con esa notación.\\
+\phantom{abc}\phantom{abc}\phantom{a} $\Rightarrow \psi (1+h) = h\cdot \tilde{d}_m \cdot C_0 + \psi(i)[1-h\cdot\tilde{d}_m]$\\
+\phantom{abc}\phantom{abc}\phantom{a} Esta expresión sirve para aproximar el valor presente si conozco la duración modificada.\\
+\phantom{abc}\phantom{abc}\phantom{a} Acuérdense que es ``Doloroso`` calcular $\psi_{\underline{c}}(i)$ pues $\psi_{\underline{c}}(i) = \sum_{j=1}^{n}C_j(1+i)^{-tj}$ \\ \\ 
+\textcolor{red}{$\rightarrow$Ayer al final de la clase}\\ \\
+TIR $\Leftrightarrow$ Tasa Interna de Rendimiento $\big/$ tasa interna de retorno.\\
+$\psi_{\underline{c}}(TIR) = 0$ \phantom{abc} EQUIU $\sum_{j=0}^{n}A_j(1+TIR){-tj} = \sum_{j=0}^{n}B_j(1+TIR)^{-tj}$\\
+¿Esta definición tiene sentido siempre? (...)\\ \\
+\textcolor{red}{Ejemplo 0.1:}\\
+Considere los primeros 3 proyectos de inversión.
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+Proyecto & $C_0$ & $C_1$ & $C_2$ & $C_3$ \\
+I        & -2000 & 500   & 500   & 500   \\
+II       & -2000 & 500   & 1800  & 0     \\
+III      & -2000 & 1800  & 500   & 0    
+\end{tabular}
+\end{table}
+\begin{enumerate}
+    \item Para que el proyecto I, nótese que $2000<500+500+500$, entonces el periodo de recuperación es 3.
+\item Para el proyecto II, nótese que $2000<500+1800$, entonces el periodo de recuperación es 2.
+\item Para el proyecto III, nótese que $2000<1800+500$, entonces el periodo de recuperación es 2.
+\end{enumerate}
+Con tasa del 10$\%$ el valor presente neto de los tres proyectos está dada por. 
+\begin{enumerate}
+    \item Proyecto I \\
+    $-2000+500(1.1)^{-1} + 500(1.1)^{-2} +5000(1.1)^{-3} = 2624.3371$
+\item Proyecto II \\
+$-2000+500(1.1)^{-1}+1800(1.1)^{-2}=-57.8512$
+\item Proyecto III \\
+$-2000+1800(1.1)^{-1}+500(1.1)^{-2}$
+\end{enumerate}
+¿Qué proyecto elegirían?\\
+$\rightarrow$ Depende de qué quiero.\\
+Si lo que nos interesa es recuperar pronto mi inversión, elijo el proyecto II o III $\phantom{ab}$
+$\underline{C}_{II} \sim_{P_n} \underline{C}_{III}$\\ \\
+$\underline{C}_{II} \succ_{P_n} \underline{C}_{III}$ y $\underline{C}_{III}\succ_{P_n} \underline{C}_{I}$\\
+y con este criterio de valor presente\\ \\
+$\underline{C}_I \succ_{VPN, 10\%}\underline{C}_{III}   \succ_{VPN,10\%}\underlind{C}_{II}$
+
+
+
+%%% Página 16
+\textcolor{blue}{Ejemplo 0.2}\\
+Considere el proyecto $(-4,000,2,000,4,000)$ para encontrar una $TIR$.
+\begin{align*}
+    \varphi_{\underline{C}}(TIR) &= 0 \Leftrightarrow \sum_{j=0}^n C_j(1+TIR)^{-t_j} =0\\
+    \Leftrightarrow & -4,000(1+TIR)^0 + 2,000(1+TIR)^{-1} + 4,000(1+TIR)^{-2} = 0\\
+    \Leftrightarrow & 4,000=4,000x^2 + 2,000x, x=(1+TIR)\\
+    &u=\frac{-1\pm\sqrt{1+4\cdot 2\cdot 2}}{4} \begin{cases}
+        &\frac{-1+\sqrt{17}}{4}\\
+        &\frac{-1-\sqrt{17}}{4}
+    \end{cases}
+\end{align*}
+Es decir,
+$$1+TIR = \begin{cases} 
+&\frac{4}{-1+\sqrt{17}}\\
+&\frac{4}{-1-\sqrt{17}}
+\end{cases}$$
+Por lo tanto,
+$$TIR =\begin{cases} 
+&\frac{4}{-1+\sqrt{17}}-1\\
+&\frac{4}{-1-\sqrt{17}}-1
+\end{cases} = \begin{cases} 
+&\frac{5-\sqrt{17}}{\sqrt{17}-1}\\
+-&\frac{5-\sqrt{17}}{1+\sqrt{17}}
+\end{cases}= \begin{cases} 
+&0.280776\\
+-&1.780776
+\end{cases}
+$$
+
+\begin{definition}
+Para un proyecto $\underline{C} =(C_0,...,C_n)$ se defina el valor presente neto de $\underline{C}$ como $\varphi_{\underline{C}}(v) = C_0 + C_1 v^{t_1} + C_2v^{t_2} + ...+ C_nv^{t_n}$.
+\end{definition}
+ 
+En este caso para el proyecto de ejemplo:\\
+\textcolor{blue}{Ejemplo 0.3}\\
+$\underline{C} = (1,000,-3,600,4,320,-1,728)$. En este caso $\varphi_{\underline{C}}(v) = 1,000 -3,600v + 4,320v^2 - 1,728v^3$ con $\varphi_{\underline{C}} (v=\frac{1}{1.1} = -0.751315$ y $\varphi_{\underline{C}}(v=\frac{1}{1.2}) = 0$\\
+
+Obsérvese que $\varphi_{\underline{C}}(v)$ es un polinomio en $v$, preguntarnos si $\varphi_{\underline{C}}(v) =0$ significa preguntarnos acerca de las raices de este polinomio.\\
+
+\textcolor{blue}{¿Cuáles son las raices de este polinomio?} Según el Teorema fundamental del Álgebra, puede tener hasta 3 raices diferentes.\\
+
+Ya sabemos que $v=\frac{1}{1.2}=\frac{5}{6}$ es una raiz\\
+\textcolor{blue}{¿Cómo obtenemos los otros 2?} División de polinomios
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7712050352858931] 
+\draw    (100,51) -- (323.33,51) ;
+%Straight Lines [id:da7661410289262178] 
+\draw    (100,51) -- (100,75) ;
+%Straight Lines [id:da7492631596021389] 
+\draw    (103,96) -- (215.33,96) ;
+%Straight Lines [id:da6195931716764791] 
+\draw    (160,133) -- (272.33,133) ;
+%Straight Lines [id:da8039874083911014] 
+\draw    (212,167) -- (324.33,167) ;
+
+% Text Node
+\draw (62,47.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$v-\frac{5}{6}$};
+% Text Node
+\draw (102,57.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$-1,728v^{3} +4,370v^{2} -3,600v+1,000$};
+% Text Node
+\draw (102,32.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$-1,728v^{2} +2,280v -1,200$};
+% Text Node
+\draw (102,78.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\ \ 1,728v^{3} -1,440v^{2}$};
+% Text Node
+\draw (169,98.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$2,280v^{2} -3,600v$};
+% Text Node
+\draw (160,116.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$-2,280v^{2} +2,400v$};
+% Text Node
+\draw (221,136.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$-1,200v+1,000$};
+% Text Node
+\draw (221,152.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$-1,200v+1,000$};
+% Text Node
+\draw (296,169.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$0$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Con esto, solo tomamos el polinomio $-1,728^2 + 2,280v-1,200=0$. Utilizando fórmula general $v_1=v_2=\frac{5}{6}$ por lo que, $\varphi_{\underline{C}}(v) = -1,728(v-\frac{5}{6})^3$, $v=\frac{5}{6}$ es una raiz de multiplicidad $3$ de $\varphi_{\underline{C}}$\\
+$\therefore$ La $TIR$ es única y $TIR = 20\%$
+
+\textcolor{blue}{Ejemplo 0.5}\\
+Considerérese dos proyectos:\\
+Proyecto $A$: $(-9,000,6,000,5,000,4,000)$\\
+Proyecto $B$: $(-9,000,1,800,1,800,1,800,...)$\\
+- Notese que para el proyecto $A$,
+\begin{align*}
+    \varphi_A(v) &= -9,000+6,000v+5,000v^2+4,000v^3\\
+    &= 4,000\bigg(v^3+\frac{5}{4}v^2+\frac{8}{2}v +\big(-\frac{9}{4}\big)\bigg)\\
+    &= 4,000\big(v-\frac{3}{4}\big)(v^2+2v+3)\\
+    &= 4,000\big(v-\frac{3}{4}\big)(v-c)(v-\Bar{C}),\Bar{C}:=-1+\sqrt{2}\sqrt{-1}
+\end{align*}
+Entonces la única $TIR$ real, satisface
+$$\frac{1}{1+TIR} = \frac{3}{4}, i.e.\quad TIR=\frac{1}{3}$$
+- Para el proyecto $B_1$
+\begin{align*}
+    \varphi_B(v) &= - 9,000 + 1,800v + 1,800v^2+...\\
+    &= -9,000+1,800\frac{v}{1-v} =0, i.e. v=\frac{5}{6}
+\end{align*}
+Por tanto, la única $TIR$ satisface $\frac{1}{1+TIR}=\frac{5}{6}$, $i.e.$ $TIR=\frac{1}{5}=20\%$
+
+Bajo el criterio de la $TIR$, se selecciona el proyecto $A$, pues $TIR_A=\frac{1}{3}>\frac{1}{5}=TIR_B$, sin embargo, el proyecto $B$ hace pagos de $\$1,800$ indefinidamente, mientras que el proyecto $A$ sólo lo hace durante tres periodos.\\
+
+\textcolor{blue}{Aprendizajes hasta el momento}\\
+\begin{itemize}
+    \item La $TIR$ no es única
+    \item El Teorema fundamental del Álgebra garantiza la existencia en $\mathbb{C}$
+    \item No necesariamente esta en $\mathbb{R}$, y además nos gustaría que $TIR>0$
+    \item El $TIR$ del Álgebra solo dice que existe, pero no dice como encontrarla y en general es difícil
+\end{itemize}
+\begin{definition}
+Sean $\underline{C}^I$ y $\underline{C}^{II}$ dos proyectos de inversión se dice que prefiero al proyecto $I$ en vez del $II$ bajo el criterio de la $TIR$ si $TIR^I \geq TIR^{II}$ y se denota como
+$$\underline{C}^I \succeq_{TIR} \underline{C}^{II}$$
+\end{definition}
+\textcolor{blue}{\textit{Moraleja General.}} Se podría aceptar un proyecto vs otro bajo un criterio y rechazarlo bajo otro criterio
+
+\textit{\textbf{Nota:}} La $TIR$ es la mínima tasa de interés que un banco me tendría que ofrecer para que en vez de entrar en el proyecto de inversión, invirtiera el flujo en el banco.
+
+\begin{definition} $TIR$
+\begin{itemize}
+\item Difícil de calcular
+\item Involucra raices de polinomios\begin{itemize}
+    \item TDA
+    \item Raices existen $\mathbb{C}$ aunque nos gustaría que estuvieran en $\mathbb{R}$
+    \item El tema de la no unicidad como financieros nos causa conflictos
+\end{itemize}
+\end{itemize}
+\end{definition}
+
+Dos alternativas para obtener la $TIR$ son las tasas: \begin{itemize}
+    \item[(1)] Dollar-Weighter
+    \item[(2)] Time-Weighter
+\end{itemize}
+El problema es que son aproximaciones para proyectos con plazo menor o igual a un año.
+
+\section*{Tasa de Interés Dollar-Weighted}
+\begin{itemize}
+    \item Su interpretación es más fácil si se piensa al proyecto como un fondo de inversión.
+    \item Solo sirve para plazos menores o iguales a un año
+    \item Utiliza interés simple
+    \item Supone que se conocen las siguientes cantidades\begin{itemize}
+        \item[1.] Valor del fondo de inversión al inicio del año $V$
+        \item[2.] Valor del fondo de inversión al final del año $V_1$
+        \item[3.] Las cantidades y fechas de depósitos y retiros realizados durante el año.
+    \end{itemize}
+    \item $A_k$: La cantidad retirada al tiempo $t_k$
+    \item $B_k$: La cantidad depositada al tiempo $t_k$
+\end{itemize}
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da4507960847289094] 
+\draw    (158,114.9) -- (424,114.9) ;
+%Straight Lines [id:da6217468544202908] 
+\draw    (207.83,110.23) -- (207.83,120.4) ;
+%Straight Lines [id:da7673121282711733] 
+\draw    (367.33,110.07) -- (367.33,120.23) ;
+%Straight Lines [id:da5179628248428941] 
+\draw    (166.83,110.23) -- (166.83,120.4) ;
+%Straight Lines [id:da150051487012828] 
+\draw    (247.83,110.23) -- (247.83,120.4) ;
+%Straight Lines [id:da7166658914817258] 
+\draw    (307.83,110.23) -- (307.83,120.4) ;
+%Straight Lines [id:da4030082983828851] 
+\draw    (415.83,110.07) -- (415.83,120.23) ;
+
+% Text Node
+\draw (267.6,120.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (161.9,124.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (202.4,124.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{1}$};
+% Text Node
+\draw (243.4,124.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{2}$};
+% Text Node
+\draw (300.8,124.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{k}$};
+% Text Node
+\draw (360.8,123.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{m}$};
+% Text Node
+\draw (410.8,124.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (326.1,122) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (199.9,92.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{1}$};
+% Text Node
+\draw (240.4,92.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{2}$};
+% Text Node
+\draw (300.9,91.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{k}$};
+% Text Node
+\draw (357.4,92.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{n-1}$};
+% Text Node
+\draw (198,145.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$B_{1}$};
+% Text Node
+\draw (238.5,145.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$B_{2}$};
+% Text Node
+\draw (299,144.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$B_{k}$};
+% Text Node
+\draw (355.5,145.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$B_{m}$};
+% Text Node
+\draw (156,146.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$V_{0}$};
+% Text Node
+\draw (402.4,92.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$V_{1}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+¿Cuál es la relación entre $V_1$ y $V_0$?
+$$V_1 = V_0 \textit{ acumulado } + \textit{ Entradas acumuladas } - \textit{ Salidas acumulados}$$
+
+Bajo interés simple, ¿cómo escribimos esta relación?
+\begin{align*}
+    V_1 &= V_0(1+i\cdot 1) + B_1[1+i(1-t_1)] + B_2[1+ i(1-t_2)]\\
+    &  + ... + B_m [1+i(1-t_m)] - A_1[1+i(1-t_1)] - A_2[1+i(1-t_2)]  \\
+    & - ... - A_m[1+i(1-t_m)]
+\end{align*}
+
+Intentemos despejar $i$.
+\begin{align*}
+    V_1 -& V_0 - B_1 - B_2 - ... - B_m + A_1 + A_2 + ... + A_m\\
+    &= i[V_0 + B_1(1-t_1) + B_2(1-t_2) + ... + B_m(1-t_m) \\
+    &- A_1(1-t_1) - A_2(1-t_2) - ... - A_m(1-t_m)]\\
+    \Leftrightarrow  V_1 -& V_0 - \sum_{k=1}^m B_k + \sum_{k=1}^m A_k = i[V_0 + \sum_{k=1}^m B_k(1-t_k) - \sum_{k=1}^m A_k(1-t_k)]\\
+    \Rightarrow i &= \frac{V_1-V_0-\sum_{k=1}^m(B_k-A_k)}{V_0 + \sum_{k=1}^m(B_k-A_k)(1-t_k)} = \frac{V_1-V_0 + \sum_{k=1}^m C_k}{V_0 - \sum_{k=1}^m C_k(1+t_k)}
+\end{align*}
+donde $C_k := \underbrace{A_k}_{Salida} - \underbrace{B_k}_{Entrada}$, $C_k$ es la salida neta.
+
+\end{document}

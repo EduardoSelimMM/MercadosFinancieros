@@ -1,0 +1,1084 @@
+
+\input{preambulo}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aquí va la portada
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlingpage} % Portada
+
+    \raggedleft % Alineada a la derecha
+    %\raggedright % Alineada a la izquierda
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	\vspace*{0.25\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Cosas del título
+	%------------------------------------------------
+    
+    \vspace*{0.1\textheight}
+
+    {\Huge{\textbf{Mercados Financieros y Valuación\\ de Proyectos}}}\\[\baselineskip] % Aquí va el título
+    \vspace*{0.1\textheight}
+
+    %------------------------------------------------
+	%	Aquí van los nombres
+	%------------------------------------------------
+    
+    {\Large Eduardo Selim Matínez Mayorga}\\[\baselineskip]
+	
+	\vfill
+
+\end{titlingpage}
+
+\thispagestyle{empty}
+
+Algunas aplicaciones...
+\section*{Bonos}
+Un bono es un instrumento que a cambio de un precio da derecho al comprador un flujko de efectivo futuro.
+\begin{itemize}
+    \item A la persona que desembolsa $P$ y recibe el flujo se le llama comprador 
+    \item A la persona que recibe $P$ y da el flujo se le llama vendedor/emisor
+\end{itemize}
+\subsection*{Tipos}
+\textbf{Bono cupón cero.}\\
+Una de las partes desembolsa $P$ (el precio del bono) a cambio de una cantidad futura, conocida como valor de redención $(C)$, en fecha futura (plazo del bono).
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+%Straight Lines [id:da6097228026432182] 
+\draw    (171.5,100) -- (400.5,100) ;
+%Straight Lines [id:da9710225863971634] 
+\draw    (171,92) -- (171,108) ;
+%Straight Lines [id:da20929424073016667] 
+\draw    (400,92) -- (400,108) ;
+% Text Node
+\draw (166,73) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textit{P}};
+% Text Node
+\draw (394,74) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textit{C}};
+% Text Node
+\draw (393.4,107.2) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textit{n}};
+\end{tikzpicture}
+\end{center}
+
+\textcolor{blue}{\textit{¿Cuánto cuesta un bono cupón cero?}}\\
+$P=V^nC = (1+j)^{-n}C$ donde a "$j$" se le concoce como tasa de rendimiento del bono y "$n$" es el plazo del bono.
+
+\begin{remark}
+\begin{enumerate}
+    \item En general se asocia a los bonos cupón cero con instrumentos muy seguros emitidos por los gobiernos.
+    \item En México, el bono \textit{cupón-cero} por excelencia son los CETES (con plazos del bono variados).
+    \item Muchos modelos matemáticos suponen la existencia de un bono \textit{cupón-cero}.
+\end{enumerate}
+\end{remark}
+
+
+\textbf{Bono cuponados}
+A cambio de un precio el día de hoy $(P)$, se recibe periodicamente \underline{cupones} y en la fecha de vencimiento del bono se recibe además la cantidad adicional. $C$, conocida como \textit{valor de redención}.
+
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da4478757222579295] 
+\draw    (182.43,151.9) -- (421.14,151.9) ;
+%Straight Lines [id:da5591492419882169] 
+\draw    (186.33,146.73) -- (186.33,156.9) ;
+%Straight Lines [id:da24334683125757495] 
+\draw    (416.33,147.07) -- (416.33,157.23) ;
+%Straight Lines [id:da8829990491144546] 
+\draw    (226.33,146.73) -- (226.33,156.9) ;
+%Straight Lines [id:da9395682183740436] 
+\draw    (266.33,146.73) -- (266.33,156.9) ;
+%Straight Lines [id:da0461267558830839] 
+\draw    (376.33,146.73) -- (376.33,156.9) ;
+%Curve Lines [id:da4997661226682054] 
+\draw    (277.4,128.8) .. controls (295.34,130.36) and (296.55,118.99) .. (296.6,93.95) ;
+\draw [shift={(296.6,92)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8582552555803019] 
+\draw    (440,139.8) .. controls (456.02,136.91) and (460.3,136.8) .. (465.62,152.62) ;
+\draw [shift={(466.2,154.4)}, rotate = 252.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (277.2,70.2) node [anchor=north west][inner sep=0.75pt]  [font=\fontsize{0.57em}{0.68em}\selectfont] [align=left] {\begin{minipage}[lt]{29.92pt}\setlength\topsep{0pt}
+\begin{center}
+Cantidad \\de dinero
+\end{center}
+
+\end{minipage}};
+% Text Node
+\draw (299.6,166) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (414.6,133) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$+C$};
+% Text Node
+\draw (176.4,165.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$P_{0}$};
+% Text Node
+\draw (220.4,166.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (260.4,166.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (358.8,165.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (409.8,165.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (217.84,145.01) node [anchor=north west][inner sep=0.75pt]  [font=\small,rotate=-269.9] [align=left] {\textit{{\small cupón}}};
+% Text Node
+\draw (257.04,145.21) node [anchor=north west][inner sep=0.75pt]  [font=\small,rotate=-269.9] [align=left] {\textit{{\small cupón}}};
+% Text Node
+\draw (367.84,145.01) node [anchor=north west][inner sep=0.75pt]  [font=\small,rotate=-269.9] [align=left] {\textit{{\small cupón}}};
+% Text Node
+\draw (402.84,145.01) node [anchor=north west][inner sep=0.75pt]  [font=\small,rotate=-269.9] [align=left] {\textit{{\small cupón}}};
+% Text Node
+\draw (434,156.6) node [anchor=north west][inner sep=0.75pt]  [font=\fontsize{0.57em}{0.68em}\selectfont] [align=left] {\begin{minipage}[lt]{44.88pt}\setlength\topsep{0pt}
+\begin{center}
+Puede ser un\\valor Payment
+\end{center}
+
+\end{minipage}};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\textcolor{blue}{\textit{¿Cuánto cuesta un bono cuponado?}}\\
+$P= \textit{cupón} \cdot \ax{\angln j} + C(1+j)^{-n}$ donde a "$n$" es el plazo del bono y "$j$" es la \textit{tasa de rendimiento} del bono.
+
+\textcolor{blue}{\textit{¿Cómo establecemos la cantidad del cupón y el valor de redención?}} Artificialmente nosotros los decidimos. \\
+
+\textit{Over the counter: Negociación del bono personalmente}
+Saber cuándo ocurre cada pago y traer a valor presente.
+Emiten bonos las compañías (salir a pedir prestado) para no dañar el patrimonio propio.
+
+\textcolor{blue}{Notación:}
+\begin{itemize}
+    \item $P$: precio del bono
+    \item $C$: valor de redención
+    \item $n$: plazo del bono
+    \item $j$: tasa del rendimiento del bono
+    \item $F$: valor nominal / facial-face value
+    \item $r$: tasa cupón del bono
+\end{itemize}
+
+\begin{empheq}[box=\fbox]{flalign*}
+&\text{Así se tiene que:}&\\
+& P = Fr\cdot\ax{\angln} + C(1+j)^{-n} \text{, donde } j \text{ es efectiva}&
+\end{empheq}
+
+\begin{proposition}
+El precio del bono también se puede calcular como:
+\begin{enumerate}
+    \item Fórmula \textit{premio-descuento} $P=C+(Fr-C(j))\ax{\angln}$
+    \item Fórmula \textit{cantidad base} $P=G + (C-G)(1+j)^{-n}$, donde $G$ es tal que $Fr=G_j$
+    \item Fórmula de \textbf{Makenam} $P=k+\frac{g}{j}(C-k)$, donde $Fr=Cg$ y $k=C(1+j)^{-n}$
+\end{enumerate}
+\end{proposition}
+\textit{\underline{Dem.}}
+\begin{enumerate}
+    \item $\ax{\angln j} = \frac{1-(1+j)^{-n}}{j} \Rightarrow 1-j\cdot\ax{\angln} = (1+j)^{-n}$
+    \begin{align*}
+        P &= Fr\cdot\ax{\angln} + C(1-j\ax{\angln})\\
+         &= Fr\cdot\ax{\angln} + C - Cj\ax{\angln}\\
+         &= C + \ax{\angln}(Fr-Cj)\\
+         \therefore\quad P &= C+ (Fr-(Cj)\ax{\angln}\qed
+    \end{align*}
+    \item \begin{align*}
+        P &= Fr\cdot\ax{\angln} + C(1+j)^{-n}\\
+        &= Gj\cdot \ax{\angln} + C(1+j)^{-n}\\
+        &= Gj\Big(\frac{1-v^n}{j}\Big) + C(1+j)^{-n}\\
+        &= G(1-(1+j)^{-n}) + C(1+j)^{-n}\\
+        &= G - G(1+j)^{-n} + C(1+j)^{-n}\\
+        \therefore\quad P &= G + (1+j)^{-n}[C-G]\qed
+    \end{align*}
+    \item Sabemos que $Fr = Cg$ y que $k=C(1+j)^{-n}$\begin{align*}
+        P &= Fr\cdot\ax{\angln} + C(1+j)^{-n}\\
+        &= Cg\cdot\ax{\angln} + k \\
+        &= Cg\Big(\frac{1-(1+j)^{-n}}{j}\Big) + k\\
+        &= \frac{Cg}{j} - \frac{gC(1+j)^{-n}}{j}+k\\
+        &= \frac{Cg}{j} - \frac{gk}{j} + k\\
+        \therefore\quad P &= k + \frac{g}{j}(C-k)\qed
+    \end{align*}
+\end{enumerate}
+
+A $G$ se le conoce como \underline{cantidad base} $G=\frac{Fr}{j}$ y a $g$ se le conoce como \underline{tasa cupón modificada} $g=\frac{Fr}{C}$
+
+\textcolor{blue}{\textit{¿Cómo se interpretan $G$ y $g$?}} Cuando compra un bono, desembolsa $P$ e implícitamente está \textit{prestando} el valor de redención "$C$", al tiempo $n$. Es decir que usted le prestó "$C$" pesos al emisor del bono y este se los pagará en $n$.
+
+\begin{empheq}[box=\fbox]{flalign*}
+&\textit{¿Puedo considerar los cupones como pagos de interés sobre C?}\quad\text{No.}&\\
+& \textit{¿Cuánto es el interés sobre la deuda C, por un periodo?}\quad\text{Al final de un periodo se acumulan }&\\
+&\quad C(1+j) \text{ pero el puro interés es de } C_j.&
+\end{empheq}
+
+Sólo se puede considerar los cupones como pago de interés cuando $Fr=C_j$ y en este caso, según la fórmula \textit{premio/descuento}:
+$$P=C+(Fr-C_j)\ax{\angln}=C+0=C$$
+
+Es decir, con los cupones vas pagando el interés que te estás "metiendo" periodo a periodo.
+
+\textcolor{blue}{\textit{Los cupones alcanzan a pagar el interés, van pagando los intereses por periodo y así no permites que la deuda crezca.}}
+
+Si $Fr>C_j$ según $\boxed{\text{P/D = Premio/Descuento}}$ 
+\begin{align*}
+    P &= C + (Fr - C_j) \ax{\angln}\\
+    & i.e.\quad P>C
+\end{align*}
+
+Si $Fr<C_j$ según P/D 
+\begin{align*}
+    P &= C + (Fr - C_j) \ax{\angln}\\
+    & i.e.\quad P<C
+\end{align*}
+
+\textit{Y de hecho...}
+\begin{itemize}
+    \item Si $P>C$ entonces $Fr-C_j>0$ i.e. $Fr>C_j$
+    \item Si $P<C$ entonces $Fr-Cj<0$ pues $\ax{\angln}>0$ i.e. $Fr<C_j$
+\end{itemize}
+\textit{Conclusión}
+\begin{align*}
+    Fr>C_j &\Leftrightarrow P>C\\
+    Fr<C_j &\Leftrightarrow P<C
+\end{align*}
+
+ 
+
+
+\begin{empheq}[box=\fbox]{flalign*}
+&\textcolor{blue}{\text{Notación:}}\\
+&\text{Si } P>C \text{ lo que estás pagando es mayor a lo que ganas, se dice que el bono se \textit{compra/vende} }&\\
+&\quad\text{como \textbf{premio}.}&\\
+& \text{Se dice que el bono se \textit{compra/vende} y a } C-P \text{ se le conoce como \textbf{descuento}.}&
+\end{empheq}
+
+\begin{remark}
+En inglés se ocupa la palabra \textit{trade} y no hay una tradición simple de este, por eso se ocupa \textit{compra/vende}
+\end{remark}
+
+\begin{multicols}{2}
+\textit{¿Cómo interpreto $G$?}
+$$Fr=Gj$$
+$G$ es la cantidad que tendría que valer \textit{el valor de redención}  $C$ para que los cupones $Fr$ pagaran completamente el interés por periodo periodicamente.
+
+\columnbreak
+
+\textit{¿Cómo interpreto $g$?}
+$$Fr=Cg$$
+$g$ es la tasa de interés necesaria para $j$ para que los cupones $Fr$ pagaran completamente el interés $C_j$ periódicamente.
+\end{multicols}
+
+\section*{Amortización y Sinking funds (fondos de acumulación)}
+
+Considérese una deuda que se toma hoy, de cantidad $L$, que se liquidará/pagará mediante n-pagos de $R_1,R_2,...,R_n$ (no necesariamente iguales) que se hacen en los tiempos $1,2,...,n$ respectivamente.
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da6126788792215244] 
+\draw    (101,151.9) -- (465,151.9) ;
+%Straight Lines [id:da34187503823616106] 
+\draw    (150.83,147.23) -- (150.83,157.4) ;
+%Straight Lines [id:da7863161656982951] 
+\draw    (416.33,147.07) -- (416.33,157.23) ;
+%Straight Lines [id:da4565159098709549] 
+\draw    (109.83,147.23) -- (109.83,157.4) ;
+%Straight Lines [id:da6752537344318184] 
+\draw    (190.83,147.23) -- (190.83,157.4) ;
+%Straight Lines [id:da055266829754114566] 
+\draw    (269.83,147.23) -- (269.83,157.4) ;
+%Straight Lines [id:da9839947143070265] 
+\draw    (309.83,147.73) -- (309.83,157.9) ;
+%Straight Lines [id:da6651881669338392] 
+\draw    (350.33,147.23) -- (350.33,157.4) ;
+%Straight Lines [id:da1938018116507373] 
+\draw    (460.83,147.07) -- (460.83,157.23) ;
+%Curve Lines [id:da39046551371801963] 
+\draw    (140.5,128) .. controls (145,101.5) and (464,105.5) .. (470,131.5) ;
+
+% Text Node
+\draw (215.6,157.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (104.9,161.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+% Text Node
+\draw (145.4,161.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (186.4,161.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (253.8,162.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (399.8,161.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (305.8,162.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (334.3,162.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (454.8,160.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (371.1,159) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (142.9,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{1}$};
+% Text Node
+\draw (183.4,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{2}$};
+% Text Node
+\draw (261.9,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k-1}$};
+% Text Node
+\draw (302.9,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k}$};
+% Text Node
+\draw (341.9,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k+1}$};
+% Text Node
+\draw (406.4,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n-1}$};
+% Text Node
+\draw (452.9,129.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+% Text Node
+\draw (267.9,93.2) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$n-pagos$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Para una tasa efectiva de interés $j$ por periodo, esta transacción debe satisfacer:
+\begin{align*}
+    L &= R_1(1+j)^{-1} + R_2(1+j)^{-2} +...+ R_n(1+j)^{-n}\\
+    L &= \sum_{k=1}^n R_k(1+j)^{-k} \quad\dotsm\quad\circledast
+\end{align*}
+Si $R_k=R$ constante, entonces $L=R\ax{\angln j}$
+
+Al final del $1^{er}$ periodo, ¿cuánto vale la deuda?
+$$L(1+j)$$
+Sin embargo, yo pago $R$, en ese momento, entonces en realidad debo $L(1+j)-R_1$ y sustituyendo en $\circledast$ se tiene que se debe \Big($\sum_{k=1}^nR_k(1+j)^{-k}\Big)(1+j)-R_1$
+\begin{align*}
+    &= \cancel{R_1}\cancel{(1+j)^{-1}(1+j)} + \sum_{k=2}^nR_k(1+j)^{-k}(1+j)-\cancel{R_1}\\
+    &= \Big(\sum_{k=2}^nR_k(1+j)^{-k}\Big)(1+j) := OB_1 \textit{ (esto se debe luego del primer pago)}
+\end{align*}
+
+Al final del segundo periodo se debe:
+$$OB_1(1+j)$$
+Sin embargo, pago $R_2$ en ese momento y la deuda real será
+\begin{align*}
+    OB_1(1+j)-R_2 &= \Bigg[\Big(\sum_{k=2}^nR_k(1+j)^{-k}\Big)(1+j)\Bigg](1+j) - R_2\\
+    &= \cancel{R_2}\cancel{(1+j)^{-2}(1+j)^2} + \bigg[\sum_{k=3}^nR_k(1+j)^{-k}\bigg](1+j)^2 - \cancel{R_2}\\
+    &= \bigg[\sum_{k=3}^nR_k(1+j)^{-k}\bigg](1+j)^2 := OB_2
+\end{align*}
+
+Inductivamente, al final del \textit{k-ésimo} periodo, ¿cuánto vale la deuda? $OB_{k-1}(1+j)$, sin embargo, yo pago $R_k$ en ese momento y en realidad debo:
+$$OB_{k-1}(1+j)-R_k= \bigg[\sum_{l=k+1}^nR_l(1+j)^{-l}\bigg] (1+j)^k = OB_k$$
+
+\textit{¿Qué relación hay entre las $OB_k^{15}$}
+$$OB_{k-1} (1+j) -R_k =OB_k$$
+\textit{\underline{Observación}}
+\begin{align*}
+    OB_k &= \big( \sum_{l=k+1}^n R_l(1+j)^{-l} \big)(1+j)^k\\
+    &= \sum_{l=k+1}^n R_l(1+j)^{k-l}
+\end{align*}
+
+\begin{center}
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da6914744590738869] 
+\draw    (121,171.9) -- (485,171.9) ;
+%Straight Lines [id:da6670825984666403] 
+\draw    (170.83,167.23) -- (170.83,177.4) ;
+%Straight Lines [id:da13988048709948842] 
+\draw    (436.33,167.07) -- (436.33,177.23) ;
+%Straight Lines [id:da8289635545012434] 
+\draw    (129.83,167.23) -- (129.83,177.4) ;
+%Straight Lines [id:da2601125601778915] 
+\draw    (210.83,167.23) -- (210.83,177.4) ;
+%Straight Lines [id:da6107464454575617] 
+\draw    (289.83,167.23) -- (289.83,177.4) ;
+%Straight Lines [id:da03272646136315682] 
+\draw    (329.83,167.73) -- (329.83,177.9) ;
+%Straight Lines [id:da9238373514074949] 
+\draw    (370.33,167.23) -- (370.33,177.4) ;
+%Straight Lines [id:da3030272522392645] 
+\draw    (480.83,167.07) -- (480.83,177.23) ;
+%Curve Lines [id:da32532122292629984] 
+\draw    (481,142) .. controls (485.95,120.22) and (358.59,93.54) .. (336.63,139.58) ;
+\draw [shift={(336,141)}, rotate = 292.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da7330682434681304] 
+\draw    (440,146) .. controls (440,123.34) and (364.32,116.21) .. (337.2,139.9) ;
+\draw [shift={(336,141)}, rotate = 316.12] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4242864339392747] 
+\draw    (381,143) .. controls (381,120.34) and (362.57,116.12) .. (337.17,139.89) ;
+\draw [shift={(336,141)}, rotate = 316.12] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (235.6,177.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (124.9,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{0}$};
+% Text Node
+\draw (165.4,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (206.4,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (273.8,182.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (419.8,181.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (325.8,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (354.3,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (474.8,180.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (391.1,179) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (361.9,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{k+1}$};
+% Text Node
+\draw (426.4,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n-1}$};
+% Text Node
+\draw (472.9,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$R_{n}$};
+
+\end{tikzpicture}
+\end{center}
+
+\begin{align*}
+    R_{k+1}(1+j)&^{k-k-1} + R_{k+2}(1+j)^{k-k-2} + R_{k+3}(1+j)^{k-k-3} + ... + R_{k+n}(1+j)^{k-n}\\
+    &= R_{k+1}(1+j)^{-1} + R_{k+2}(1+j)^{-2} +R_{k+3}(1+j)^{-3} + ... + R_{k+n}(1+j)^{-(n-k)}
+\end{align*}
+
+La ecuación dice que traemos al tiempo $k$ los pagos faltantes para liquidar la deuda.
+
+\textbf{Notación.}\\
+\begin{itemize}
+    \item $OB_k$: Saldo restante al tiempo $k$ \textit{(outstanding balance $k$)}
+    \item $k$: El valor presente de lo que me falta por pagar
+\end{itemize}
+
+Si todos los pagos son iguales \textit{i.e.} $R_k = R$, $k\in\{1,...,n\}$
+
+\begin{align*}
+    OB_k &= R(1+j)^{-1} + R(1+j)^{-2} + ... + R(1+j)^{-(n-k)}\\
+    &= R(v) + Rv^2 + ... + Rv^{n-k} \\
+    &= R(v+v^2+...+v^{n-k} = R\ax{\angl{n-k}j}
+\end{align*}
+
+\textit{\underline{Observación}}
+$$L(1+j)^k - \sum_{l=1}^k R_{l}(1+j)^{k-l+1}$$
+$Conjetura=OB_k$
+\begin{align*}
+    OB_k^{[R]} &:= L(1+j)^k - \sum_{l=1}^k R_{l}(1+j)^{k-l+1} \textit{ retrospectivo}\\
+    OB_k^{[P]} &:= \sum_{l=1}^n R_{l}(1+j)^{-} \textit{ prospectivo}
+\end{align*}
+
+Amortización = de latin mortis $\rightarrow$ darle \underline{muerte} a una deuda\\
+$Conjetura\quad OB_k^{[P]} = OB_k^{[R]}$
+
+\textit{\underline{Repaso}}\\
+$OB_{k}$: Outstanding balance al tiempo $k$, saldo insoluto al tiempo $k$. Saldo restante al tiempo $t$. $OB_k$ es la cantidad que se debe justo después del $k$-ésimo pago.\\
+$$OB_1 = L(1+j) - R_1$$
+Licencia: $OB_0=L$ y en general...
+$$OB_k= OB_{k-1}(1+j) - R_k,\quad k\in\{1,2,...,n\}$$
+
+Deducimos que:
+$$OB_k = \big[ \sum_{m=k+1}^n R_m(1+j)^{-m}\big](1+j)^k$$
+Demostramos que:
+$$OB_k = R_{k+1}(1+j)^{-1} + R_{k+2}(1+j)^{-2}+...+ R_n(1+j)^{-(n-k)}$$
+
+Esto motivó la definición:
+$$ OB_k^{[P]} = R_{k+1}(1+j)^{-1} + R_{k+2}(1+j)^{-2} + ... + R_{k+n}(1+j)^{-(n-k)}$$
+
+$OB_k^{[P]}$: Prospectivo outstanding balance al tiempo $k$, saldo insoluto prospectivo al tiempo $k$\\
+
+''Artificialmente'' definimos:
+\begin{align*}
+    OB_{k}^{[R]} &= L(1+j)^k - [R_1(1+j)^{k-1} + ... + R_{k+1}(1+j)^1] + R_k(1+j)^0\\
+    &= L(1+j)^k - \big( R_1(1+j)^{k-1} + ... + R_{k-1}(1+j) + R_k \big)
+\end{align*}
+
+$OB_k^{[R]}$: Retrospective outstanding balance al tiempo $k$ saldo insoluto retrospectivo al tiempo $k$\\
+
+De manera sucinta...
+$$OB_k^{[R]} = L(1+j)^k - \sum_{m=1}^kR_m(1+j)^{k-m}$$
+
+¿Cómo interpretamos/construimos $OB_k^{R}$?
+$$\underbrace{OB_k^{R}}_{\text{La deuda al tiempo }k} = \underbrace{L(1+j)^k}_{\text{Si no hubiere hecho ningún pago, debería esto al tiempo }k} - \underbrace{\sum_{m=1}^k R_m(1+j)^{k-m}}_{\text{Sin embargo, sí se hacen pagos}}$$
+
+Conjetura... $OB_k^{[R]} = OB_k^{[P]}$\\
+\underline{\textit{Dem.}} \\
+\begin{align*}
+    OB_k^{[R]} &= L(1+j)^k - \sum_{m=1}^k R_m(1+j)^{k-m}\\
+    &= \big( \sum_{m=1}^n R_m(1+j)^{-m} \big) (1+j)^k - \sum_{m=1}^k R_m(1+j)^{k-m}\\
+    &= \sum_{m=1}^n R_m(1+j)^{k-m} - \sum_{m=1}^k R_m(1+j)^{k-m}\\
+    &= \sum_{m=k+1}^n R_m(1+j)^{k-m} = R_{k+1}(1+j)^{-1} + R_{k+2} + ... + r_n(1+j)^{-(n-k)} = OB_k^{[P]}\\
+    &\quad\quad\quad \therefore OB_k^{[P]} = OB_k^{[R]}
+\end{align*}
+
+\textit{\underline{Observación}}
+\begin{align*}
+    OB_k &= OB_{k-1}(1+j) - R_k\\
+    &= OB_{k-1} + \underbrace{OB_{k-1}\cdot j}_{I_k} - R_k\\
+    &= OB_{k-1} + I_k - R_k \textit{, donde }I_k=OB_{k-1}\cdot j\\
+    & \quad I_k := \text{ El interés de la deuda al tiempo }k\\
+    &= OB_{k-1} - \underbrace{(R_k-I_k)}_{P_k}\\
+    &= OB_{k-1} - P_k \quad \textit{donde }P_k := R_k - I_k
+\end{align*}
+
+$P_k$: Pago de principal (de la deuda) al tiempo $k$, y respresenta la parte de $R_k$ que efectivamente disminuyó la deuda y no sólo interés. \textit{Lo que realmente te ayudó a disminuir tu deuda.}\\
+
+\textbf{Notación.} \\
+$$R_k = P_k + I_k \textit{ i.e. cada pago se divide en pago de principal y pago de interés}$$
+
+\textbf{Casos}\\
+1. Que todos los pagos sean iguales $\forall i, 1 \leq i \leq n, R$,  con $R$ constante:
+\begin{itemize}
+    \item \begin{align*} OB_k &= R(1+j)^{-1} + R(1+j)^{-2} + ... + R(1+j)^{-(n-k)}\\
+    &= R\big[(1+j)^{-1} + (1+j)^{-2} +...+ (1+j)^{-(n-k)}\big]\\
+    &= R\big(v+v^2+...+v^{n-k}\big]\\
+    &= R\ax{\angl{n-k}}
+    \end{align*}
+    \item \begin{align*} I_k &= OB_{k-1}\cdot j\\
+        &= R\ax{\angl{n-(k-1)}}\cdot j\\
+        &= R\ax{\angl{n-k+1}}\cdot j\\
+        &= R\big(\frac{1-r^{n-k+1}}{j} = R(1-v^{n-k+1}) = R - Rv^{n-k+1}
+    \end{align*}
+    \item \begin{align*} P_k &= R_k -I_k = R- (R-Rv^{n-k+1}\\
+    &= Rv^{n-k+1} = R(1+j)^{k-n-1}
+    \end{align*}
+\end{itemize}
+
+\underline{\textit{Observación}}\\
+(1) $k\to R_k$ es creciente, esto significa que conforme va pasando el tiempo los pagos efectivos a la deuda (\textit{i.e.} sin interés) son mayor.\\
+
+(2) $k\to I_k$ es decreciente, esto significa que conforme va pasando el tiempo los pagos de interés son menores. Por lo que, tendremos la \underline{tabla de amortización}.\\
+
+
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c|c}
+\multicolumn{5}{c}{Tabla de amortización}                                                                 \\
+Periodo & Pago      & Interés                   & Pago Principal            & Saldo Insoluto              \\
+$0$     & -         & -                         & -                         & $OB_0=L$                    \\
+$1$     & $R_1$     & $I_1=OB_0 \cdot j$         & $P_1=R_1-I_1$             & $OB_1=OB_0-P_1$             \\
+$2$     & $R_2$     & $I_2=OB_1 \cdot j$        & $P_2=R_2-I_2$             & $OB_2=OB_1-P_2$             \\
+$\vdots$     & $\vdots$       & $\vdots$        & $\vdots$                  & $\vdots$                         \\
+$k-1$   & $R_{k-1}$ & $I_{k-1}=OB_{k-2}\cdot j$ & $P_{k-1}=R_{k-1}-I_{k-1}$ & $OB_{k-1}=OB_{k-2}-P_{k-1}$ \\
+$k$     & $R_k$     & $I_k=OB_{k-1}\cdot j$     & $P_k=R_k-I_k$             & $OB_k=OB_{k-1}-P_k$         \\
+$k+1$   & $R_{k+1}$ & $I_{k+1}=OB_k\cdot j$     & $P_{k+1}=R_{k+1}-I_{k+1}$ & $OB_{k+1}=OB_k-P_{k+1}$     \\
+$\vdots$     & $\vdots$      & $\vdots$       & $\vdots$                   & $\vdots$                      \\
+$n$     & $R_n$     & $I_n=OB_{n-1}\cdot j$     & $P_n=R_n-I_n$             & $OB_n=OB_{n-1}-P_n=0$      
+\end{tabular}
+\end{table}
+
+\textit{Tarea.} Rehacer la tabla cuando los pagos son constantes sabieron que:\\
+$$I_k=R[1-(1+j)^{-(n-k+1)}], P_k=R(1+j)^{-(n-k+1)}, OB_k=R\ax{\angl{n-k}j}$$
+
+\textit{Herramientas}: Google sheets, Googl drive R
+\\
+
+1. $OB_k^{[P]} = VP$ pagos futuros no hechos\\
+$OB_k^{[R]}=$ Valor acumulado de la deuda | Valor acumulado de los pagos ya hechos\\
+
+2. Una deuda se pagará mediante pagos trimestrales durante 3 años con una tasa de interés del 8\% anual convertible trimestral. Encontrar el saldo restante de la deuda justo después de 2 años, la deuda es de $10,000$.\\
+Pagos trimestrales 3 años. $i^{(4)}= 8\% \to j=\frac{8\%}{4}=2\%$ efect. trim.\\
+$n=3(4) = 12$ pagos trimestrales\\
+$L=10,000$\\
+$R=945.59$\\
+Sabemos que $L=R\ax{\angln i} \Rightarrow 10,000 = R\ax{\angl{12}2\%}$\\
+\begin{align*}
+    OB_k &= R\cdot\ax{\angl{n-k}} =945.59\cdot\ax{\angl{12-8}2\%} = 945.59\ax{\angl{4}2\%}\\
+    &= 945.59\big(\frac{1-(1.02^{-4}}{0.02}\big) = 3,600.55
+\end{align*}
+
+6. Deuda $L$. Pagos semestr. nivelados por 2 años $\Rightarrow n=2(2) = 4$ semestres\\
+$R_4 = 3,151.49$\\
+$I_3 = 122.38\quad\quad OB_1 = 9,088.51$\\
+$P_2= 2,969.71 \quad$ Complementar la tabla de amortización 
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c|c}
+\multicolumn{5}{c}{Tabla de amortización}                                        \\
+Periodo & Pago       & Interés    & Pago Principal & Saldo Insoluto              \\
+$0$     & -          & -          & -              & $L=R\ax{\angln j} = 12,000$ \\
+$1$     & $3,151.49$ & $240$      & $2,911.49$     & $9,088.51$                  \\
+$2$     & $3,151.49$ & $181.7702$ & $2,969.71$     & $6,118.8$                   \\
+$3$     & $3,151.49$ & $122.38$   & $3,029.11$     & $3,089.69$                  \\
+$4$     & $3,151.49$ & $61.7938$  & $3,089.69$     & $0$
+\end{tabular}
+\end{table}
+
+\begin{align*}
+    P_2 &= Rv^{n-2+1} = Rv^{4-2+1} = Rv^3 \Rightarrow 2,969.71 = 3,151.41(1+j)^{-3}\\
+    & \Rightarrow \bigg(\frac{2,969.71}{3,151.41}\bigg)^{-\frac{1}{3}} = (1+j) \Rightarrow j = \bigg(\frac{2,969.71}{3,151.41}\bigg)^{-\frac{1}{3}} - 1 = 2\% \text{ efect. semestral}
+\end{align*}
+
+\circled{3} $L= R\ax{\angln j} = 3,151.49\ax{\angl{4}2\%} = 3,151.49\bigg(\frac{1-v^4}{0.02}\bigg) = 12,000.01$\\
+
+\circled{4} $I_1 = 12,000(0.02) = 240$\\
+
+\circled{5} $P_1 = 3,151.49 - 240 = 2,911.49$\\
+
+\circled{6} $9,088.51(0.02) = 181.7702$\\
+
+\circled{7} $OB_1 - P_2 = 9,088.51 - 2,969.71 = 6,118.8$\\
+
+Si no se dice quién es $C \Rightarrow F=C$
+
+\section*{Método de Sinking-fund (Fondo de acumulación)}
+En el esquema de amortización, tomamos una deuda hoy y lo vamos pagando poco a poco.
+
+En el método de \textit{Sinking-fond}, tomando una deuda hoy y la pagaremos completa al final de $n$ periodos, sin embargo, se harán depósitos en un fondo (llamado \textit{Sinking-fund} para lograr acumular la cantidad adecuada; además iremos pagando el interés sobre la deuda periódicamente.\\
+\textit{Para el sinking fund}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7559120436362685] 
+\draw    (121,171.9) -- (485,171.9) ;
+%Straight Lines [id:da8772966460107505] 
+\draw    (170.83,167.23) -- (170.83,177.4) ;
+%Straight Lines [id:da30462270670980895] 
+\draw    (436.33,167.07) -- (436.33,177.23) ;
+%Straight Lines [id:da5077518918169632] 
+\draw    (129.83,167.23) -- (129.83,177.4) ;
+%Straight Lines [id:da6736197418737911] 
+\draw    (210.83,167.23) -- (210.83,177.4) ;
+%Straight Lines [id:da4264489594115969] 
+\draw    (289.83,167.23) -- (289.83,177.4) ;
+%Straight Lines [id:da6434130448694175] 
+\draw    (329.83,167.73) -- (329.83,177.9) ;
+%Straight Lines [id:da6286140326762423] 
+\draw    (370.33,167.23) -- (370.33,177.4) ;
+%Straight Lines [id:da17368503094360932] 
+\draw    (480.83,167.07) -- (480.83,177.23) ;
+%Curve Lines [id:da8368648508770308] 
+\draw    (480.83,171.23) .. controls (496.85,168.34) and (499.24,166.9) .. (504.42,182.62) ;
+\draw [shift={(505,184.4)}, rotate = 252.35] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (235.6,177.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (124.9,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (165.4,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$1$};
+% Text Node
+\draw (206.4,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$2$};
+% Text Node
+\draw (273.8,182.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k-1$};
+% Text Node
+\draw (419.8,181.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n-1$};
+% Text Node
+\draw (325.8,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k$};
+% Text Node
+\draw (354.3,182.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$k+1$};
+% Text Node
+\draw (474.8,180.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$n$};
+% Text Node
+\draw (391.1,179) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (162.9,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{1}$};
+% Text Node
+\draw (203.4,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{2}$};
+% Text Node
+\draw (273.9,149.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{k-1}$};
+% Text Node
+\draw (322.9,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{k}$};
+% Text Node
+\draw (359.9,150.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{k+1}$};
+% Text Node
+\draw (423.4,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{n-1}$};
+% Text Node
+\draw (472.9,149.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$D_{n}$};
+% Text Node
+\draw (498.9,185.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+Se debe cumplir que:
+\begin{align*}
+    L &= D_n + D_{n-1}(1+\hat{j}) + D_{n-2}(1+\hat{j})^{-2} + ... + D_1(1+\hat{j})^{n-1}\\
+    &= \sum_{m=1}^n D_m(1+\hat{j})^{n-m} 
+\end{align*}
+
+donde $\hat{j}$ es la tasa de interés efectiva por periodo del \textit{ sinking-fund}
+
+¿Cuánto es el interés sobre la deuda en cada periodo? $L\cdot j$ donde $j$ es la tasa de interés efectiva de la deuda. \\
+En el \textit{sinking-fund} no disminuye la deuda solo se pagan los intereses.\\
+
+A la cantidad $L\cdot j$ se le conoce como \underline{servicio de la deuda}. \textit{Al que le debes solo le pagas los intereses y tú mismo buscas la forma de pagar }$L$.\\
+
+¿De cuánto es el desembolso total el deudor al tiempo $k$?\\
+$$\underbrace{D_k}_{\text{depósito al SF}} + \underbrace{L_j}_{\text{servicio de la deuda}} \leq R_k$$
+
+$R_k$: es la renta si estuviera pagando por amortización\\
+Sería ideal que se cumpla la desigualdad para que fuera atractivo para pagar en la amortización.\\
+
+\textit{Tabla del Sinking-fund}
+\begin{table}[H]
+\begin{tabular}{c|c|c|c|c}
+Periodo  & Servicio de la deuda & Depósito al S.F. & Saldo en S.F.  & Interés ganado por el S.F. \\ $0$      & -       & -   & -   & -   \\ $1$      & $L_j$     & $D_1$            & $D_1=M_1$        & -    \\
+$2$      & $L_j$     & $D_2$  & $D_1(1+\hat{j}) + D_2 = M_2$        & $M_1\hat{j}$     \\
+$\vdots$ & $\vdots$    & $\vdots$ & $\vdots$   & $\vdots$ \\ $k$  & $L_j$ & $D_k$    & $M_{k-1}(1+\hat{j})+ D_k = M_k$     & $M_{k-1}\hat{j}$   \\ $\vdots$ & $\vdots$   & $\vdots$ & $\vdots$    & $\vdots$  \\ $n$ & $L_j$ & $D_n$  & $M_{n-1}(1+\hat{j}) + D_n = M_n =L$ & $M_{n-1}\hat{j}$  
+\end{tabular}
+\end{table}
+
+\textit{Outstanding Balance}.
+\begin{table}[H]
+\begin{tabular}{cc}
+$0$ & $L = OB_0$ \\
+$1$     & $L-D_1=L-M_1 = OB_1$ \\
+$2$     & $L-M_2=OB_2$ \\
+$\vdots$ & \\
+$k$     & $L-M_k=OB_k$ \\
+$\vdots$ & \\
+$n$     & $L-M_n=OB_n$ 
+\end{tabular}
+\end{table}
+
+\textbf{Notación.}\\
+$M_k$: Saldo en el SF, justo después del $k$-ésimo depósito\\
+$D_k$: El depósito al tiempo $k$\\
+$OB_k$: Outstanding balance al tiempo $k$\\
+$IS_k$: Interés ganado en el SF en el periodo $k$
+$$IS_k=M_{k-1}\hat{j}$$
+
+\underline{\textit{Observación}}\\
+\begin{align*}
+    M_k &= M_{k-1}(1+\hat{j}) + D_k\\
+    &= M_{k-2}(1+j\hat{j})^2 + D_{k-1}(1+\hat{j}) + D_k\\
+    &= [M_{k-3}(1+\hat{j}) + D_{k-2}](1+\hat{j})^2 + D_{k-1}(1+\hat{j}) + D_k \\
+    &= M_{k-3}(1+\hat{j})^3 + D_{k-2}(1+\hat{j})^2 + D_{k-1}(1+\hat{j}) + D_k\\
+    M_k &= D_1(1+\hat{j})^{k-1} + D_2 (1+\hat{j})^{k-2} + ... + D_{k-1} (1+\hat{j}) + D_k
+\end{align*}
+
+\underline{En un caso particular:}\\
+Si los pagos $D_k=D$ son todos iguales.\\
+
+\circled{1} Se observa que 
+$$M_k = D(1+\hat{j})^{k-1} + D(1+\hat{j})^{k-2} + ... + D(1+\hat{j}) + D = D\cdot S\angl{k}\hat{j} $$
+
+\circled{2} E igualmente se ve que $L=DS\angl{n}\hat{j}$\\
+
+\circled{3} De la misma forma
+$$IS_k = M_{k-1}\cdot \hat{j} = DS\angl{k-1}\hat{j}\cdot\hat{j} = D\bigg( \frac{(1+\hat{j})^{k-1} -1}{\hat{j}}\bigg)\hat{j} = D\Big[(1+\hat{j})^{k-1} -1\Big]$$
+
+\circled{4} Recordando la amortización ''nivelada'' vemos:\\
+\begin{align*}
+    \begin{cases}
+    L=R\ax{\angln j} & L=DS\angln\hat{j}\\
+    R=\frac{L}{\ax{\angln j}} & D= \frac{L}{S\angl{n}\hat{j}}
+    \end{cases}
+\end{align*}
+Desembolso en $k$ del deudor por SF $D+L_j$
+
+\textit{Recordatorio}
+$$\frac{1}{\ax{\angln i}} = \frac{1}{S\angln i} + i$$
+
+\subsection*{Caso nivelado}
+\begin{itemize}
+    \item Amortización. Desembolso periódico
+    $$R=\frac{L}{\ax{\angln j}}$$
+    \item Sinking Fund
+    $$D + L_j = \frac{L}{S\angln\hat{j}} + L_j$$
+\end{itemize}
+
+¿Qué pasa si $j=\hat{j}$?\\
+\textit{i.e.} la tasa de interés de la deuda es la misma que la del SF?
+
+Intuitivamente el interés me de ganas el SF, es el mismo que estoy pagando sobre la deuda:\\
+De hecho se ve el desembolso en:
+$$SF = L \Big(\frac{1}{S\angln \hat{j}} + j\Big) = L\Big(\frac{1}{S\angln j} + j\Big) = L\Big(\frac{1}{\ax{\angln j}}\Big) = \frac{L}{\ax{\angln j}} = \textit{ Desembolso de amortización}$$
+
+\textbf{Notación.} \\
+$$\frac{1}{\ax{\angln j\&\hat{j}}} = \frac{1}{S\angln\hat{j}} + j \text{ con esta notación el desembolso total bajo el método de SF es:}$$
+$$L\Big(\frac{1}{S\angln\hat{j}}+j\Big) = L\Big(\frac{1}{\ax{\angln j\&\hat{j}}}\Big) = \frac{L}{\ax{\angln j\&\hat{j}}}$$
+
+Abusando de la notación anterior, tenemos que
+\begin{align*}
+    \frac{1}{\ax{\angln j\&\hat{j}}} &= \frac{1}{S\angln\hat{j}} + j = \Big(\frac{1}{\ax{\angln\hat{j}}} - \hat{j}\Big) +j \\
+    &= \frac{1}{\ax{\angln\hat{j}}} + (j- \hat{j}) = \frac{1}{S\angln\hat{j}} + \hat{j} = \frac{1}{\ax{\angln\hat{j}}} \\
+    &\Rightarrow \frac{1}{S\angln\hat{j}} = \frac{1}{\ax{\angln\hat{j}}} - \hat{j}
+\end{align*}
+Así,
+\begin{align*}
+    \frac{1}{\ax{\angln j\&\hat{j}}} &= \frac{1}{\ax{\angln\hat{j}}} - \hat{j} + j\\
+    & \Rightarrow \ax{\angln j\&\hat{j}} = \frac{1}{\frac{1}{\ax{\angln\hat{j}}} - \hat{j} + j} = \frac{1}{\frac{1+(j-\hat{j}\ax{\angln \hat{j}}}{\ax{\angln\hat{j}}}} = \frac{\ax{\angln\hat{j}}}{(j-\hat{j})\ax{\angln\hat{j}} + 1}\\
+    &\therefore \ax{\angln j\&\hat{j}} = \frac{\ax{\angln\hat{j}}}{(j-\hat{j})\ax{\angln\hat{j}} + 1}
+\end{align*}
+
+\section*{Análisis de Proyectos de inversión}
+\begin{definition}
+Un proyecto de inversión es un vector en $\mathbb{R}^{n+1}$, $\underline{C} = (C_0,C_1, ..., C_n$ \underline{asociado} a los tiempos $0, t_1, ..., t_n)\in\mathbb{R}^{n+1}$ donde: \textit{(suponiendo que los valores son conocidos)}
+\begin{itemize}
+    \item $C_k$: $A_k - L_k$, $k=0,1,2,...,n$
+    \item $A_k$: Activos al tiempo $t_k$ $A_k\geq 0$
+    \item $L_k$: Pasivos al tiempo $t_k$ $L_k\geq 0$
+\end{itemize}
+\end{definition}
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da35750079158205095] 
+\draw    (8,150.9) -- (274,150.9) ;
+%Straight Lines [id:da4504851993482528] 
+\draw    (57.83,146.23) -- (57.83,156.4) ;
+%Straight Lines [id:da08842937994220501] 
+\draw    (217.33,146.07) -- (217.33,156.23) ;
+%Straight Lines [id:da8934425975273562] 
+\draw    (16.83,146.23) -- (16.83,156.4) ;
+%Straight Lines [id:da20941080688586933] 
+\draw    (97.83,146.23) -- (97.83,156.4) ;
+%Straight Lines [id:da039091682936601035] 
+\draw    (157.83,146.23) -- (157.83,156.4) ;
+%Straight Lines [id:da6491299121844407] 
+\draw    (265.83,146.07) -- (265.83,156.23) ;
+%Curve Lines [id:da6048859255468285] 
+\draw    (289,148) .. controls (328.6,118.3) and (313.31,175.24) .. (351.82,147.27) ;
+\draw [shift={(353,146.4)}, rotate = 143.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7017111993629034] 
+\draw    (366.1,150.9) -- (526,150.9) ;
+%Straight Lines [id:da13047854427245875] 
+\draw    (415.93,146.23) -- (415.93,156.4) ;
+%Straight Lines [id:da731467047061797] 
+\draw    (374.93,146.23) -- (374.93,156.4) ;
+%Straight Lines [id:da8887539714752437] 
+\draw    (455.93,146.23) -- (455.93,156.4) ;
+%Straight Lines [id:da09220224193043425] 
+\draw    (515.93,146.23) -- (515.93,156.4) ;
+
+% Text Node
+\draw (117.6,156.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (11.9,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (52.4,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{1}$};
+% Text Node
+\draw (93.4,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{2}$};
+% Text Node
+\draw (150.8,160.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{k}$};
+% Text Node
+\draw (210.8,159.8) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{n-1}$};
+% Text Node
+\draw (257.8,159.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{n}$};
+% Text Node
+\draw (176.1,158) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (49.9,128.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{1}$};
+% Text Node
+\draw (90.4,128.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{2}$};
+% Text Node
+\draw (150.9,127.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{k}$};
+% Text Node
+\draw (207.4,128.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{n-1}$};
+% Text Node
+\draw (257.9,128.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{n}$};
+% Text Node
+\draw (7.9,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$A_{0}$};
+% Text Node
+\draw (475.7,156.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {. . .};
+% Text Node
+\draw (370,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (410.5,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{1}$};
+% Text Node
+\draw (451.5,160.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{2}$};
+% Text Node
+\draw (508.9,159.3) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$t_{n}$};
+% Text Node
+\draw (408,128.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$C_{1}$};
+% Text Node
+\draw (448.5,128.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$C_{2}$};
+% Text Node
+\draw (508,128.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$C_{n}$};
+% Text Node
+\draw (366,129.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$C_{0}$};
+% Text Node
+\draw (48,181.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{1}$};
+% Text Node
+\draw (88.5,181.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{2}$};
+% Text Node
+\draw (149,180.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{k}$};
+% Text Node
+\draw (205.5,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{n-1}$};
+% Text Node
+\draw (256,181.7) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{n}$};
+% Text Node
+\draw (6,182.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$L_{0}$};
+% Text Node
+\draw (274,91) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{46.24pt}\setlength\topsep{0pt}
+\begin{center}
+{\scriptsize Son pagos}\\{\scriptsize deterministas}
+\end{center}
+
+\end{minipage}};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\textit{\underline{Observación}}. Los $t_k's$ no son necesariamente equistantes. ¿Qué nos interesa de un proyecto de inversión?
+
+\circled{1} ¿Hay una ganancia efectiva? \textit{i.e.} ¿Gano o pierdo?
+
+\circled{2} Dados dos proyectos, ¿cuál es el \underline{''MEJOR''}?\\
+
+Mejor:\\
+$\quad$2.1: Mejor:más ganancia\\
+$\quad$2,2: Mejor: recupera mi inversión más rápido\\
+$\quad$2.3: Mejor: Que la inversión inicial sea menor\\
+$\quad$2.4; Mejor: ¿Gano más que depositando en un banco?
+
+La hipótesis de no arbitral = oferta y demanda.
+
+\begin{definition}
+Para un proyecto \underline{$C$} se define la función valor presente como $\Psi_{\underline{C}}: [-1,\infty)\to\mathbb{R}$ dado por:
+\begin{align*}
+    \Psi_{\underline{C}}(i) &= \sum_{k=0}^n C_k(1+i)^{-t_k}\\
+    \Psi_{A}(i) &= \sum_{k=0}^n A_k(1+i)^{-t_k}\\
+    \Psi_{L}(i) &= \sum_{k=0}^n L_k(1+i)^{-t_k}
+\end{align*}
+\end{definition}
+
+\underline{\textit{Observación}}. 
+\begin{itemize}
+    \item[i)] $i\to\Psi_A$ es no-creciente pues
+    $$\frac{\delta}{\delta_i}\Psi_A(i) = \frac{\delta}{\delta_i} \sum_{k=0}^n A_k(1+i)^{-t_k} = \sum_{k=0}^n \frac{\delta}{\delta_i} A_k(1+i)^{-t_k} = \sum_{k=1}^n -t_k A_k(1+i)^{-t_k} < 0$$
+    Así $\frac{\delta}{\delta_i}\Psi_A(i) < 0 \Rightarrow \Psi_A$ es estrictamente decreciente
+    \item[ii)] $i\to\Psi_L(i)$ es no decreciente por la misma razón
+    \item[iii)] $i\to\Psi_{\underline{C}}(i)$ no sabemos los criterios
+\end{itemize}
+
+\begin{definition}
+Se dice que el proyecto $\underline{C}$ es rentable si $\exists i^*\in(-1,\infty)$ tal que $\Psi_{\underline{C}} (i^*)>0$ (\textit{i.e.} su valor presente es positivo).
+Equivalentemente $\exists i^*\in(-1,\infty)$ tal que $\Psi_A(i^*) > \Psi_L(i^*)$
+\end{definition}
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Axis 2D [id:dp847504424215119] 
+\draw  (150,203.72) -- (307,203.72)(164.21,96.4) -- (164.21,215.4) (300,198.72) -- (307,203.72) -- (300,208.72) (159.21,103.4) -- (164.21,96.4) -- (169.21,103.4)  ;
+%Curve Lines [id:da6455330390669454] 
+\draw    (164,161.4) .. controls (201,281.4) and (197,211.4) .. (226,136.4) ;
+%Curve Lines [id:da8514432273859649] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (226,136.4) .. controls (236,118.4) and (246,150.4) .. (249,161.4) ;
+%Curve Lines [id:da42408835899900654] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (141,136.4) .. controls (151,118.4) and (158,149.3) .. (164,161.4) ;
+%Curve Lines [id:da6579230623370902] 
+\draw    (249,161.4) .. controls (278,275.4) and (281,220.4) .. (304,144.4) ;
+
+% Text Node
+\draw (152,204.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$0$};
+% Text Node
+\draw (301,208.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$i$};
+% Text Node
+\draw (153,80.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\Psi_{\underline{C}}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{definition}
+Sean $\underline{C}$ y $\underline{\hat{C}}$ dos proyectos de inversión. Se dice que $\underline{C}$ es mejor que $\underline{\hat{C}}$ en valor presente a la tasa $i^*$ si $\Psi_{\underline{C}}(i^*) \geq \Psi_{\underline{\hat{C}}} (i^*)$ denotado por
+$$\underline{C} \succeq \underline{\hat{C}}$$
+\end{definition}
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Axis 2D [id:dp9522468765174452] 
+\draw  (146,208.51) -- (367,208.51)(169,70.5) -- (169,222.4) (360,203.51) -- (367,208.51) -- (360,213.51) (164,77.5) -- (169,70.5) -- (174,77.5)  ;
+%Curve Lines [id:da06317747888029013] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (159,129.4) .. controls (182,108.9) and (196,132.4) .. (202,138.4) ;
+%Curve Lines [id:da3356942508994254] 
+\draw    (202,138.4) .. controls (249,241.4) and (253,197.4) .. (295,134.4) ;
+%Curve Lines [id:da36837495479157134] 
+\draw    (188,137.4) .. controls (231,397.4) and (232,86.4) .. (262,114.4) ;
+%Curve Lines [id:da5637884937561276] 
+\draw    (262,114.4) .. controls (300,240.4) and (300,323.4) .. (329,117.4) ;
+%Curve Lines [id:da43192884110125307] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (295,134.4) .. controls (318,113.9) and (333,134.8) .. (339,140.8) ;
+%Curve Lines [id:da33277351068432426] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (157,120.4) .. controls (173,95.4) and (181,116.4) .. (188,137.4) ;
+
+% Text Node
+\draw (327,97.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\Psi_{\underline{C}}$};
+% Text Node
+\draw (344,137.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\Psi_{\widehat{\underline{C}}}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{definition}
+Sean $\underline{C}$ un proyecto de inversión. Se define una tasa interna de rendimiento como $TIR\in\mathbb{R}$ tal que $\Psi_{\underline{C}} (TIR)=0$, equivalentemente 
+$$\Psi_A(TIR)=\Psi_L(TIR)$$
+\textit{A veces $TIR$ puede no existir y si existe, no es único.}
+\end{definition}
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Axis 2D [id:dp9522468765174452] 
+\draw  (146,187.61) -- (367,187.61)(169,70.5) -- (169,199.4) (360,182.61) -- (367,187.61) -- (360,192.61) (164,77.5) -- (169,70.5) -- (174,77.5)  ;
+%Curve Lines [id:da06317747888029013] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (159,129.4) .. controls (182,108.9) and (196,132.4) .. (202,138.4) ;
+%Curve Lines [id:da3356942508994254] 
+\draw    (202,138.4) .. controls (249,241.4) and (253,197.4) .. (295,134.4) ;
+%Curve Lines [id:da43192884110125307] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.92 ]   (295,134.4) .. controls (318,113.9) and (333,134.8) .. (339,140.8) ;
+%Shape: Ellipse [id:dp7893274056052362] 
+\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (217.99,186.91) .. controls (218.08,184.07) and (222.38,181.91) .. (227.58,182.08) .. controls (232.78,182.26) and (236.92,184.7) .. (236.83,187.55) .. controls (236.73,190.39) and (232.44,192.55) .. (227.23,192.38) .. controls (222.03,192.2) and (217.89,189.76) .. (217.99,186.91) -- cycle ;
+%Shape: Ellipse [id:dp02607015406839175] 
+\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (252.99,186.91) .. controls (253.08,184.07) and (257.38,181.91) .. (262.58,182.08) .. controls (267.78,182.26) and (271.92,184.7) .. (271.83,187.55) .. controls (271.73,190.39) and (267.44,192.55) .. (262.23,192.38) .. controls (257.03,192.2) and (252.89,189.76) .. (252.99,186.91) -- cycle ;
+%Curve Lines [id:da3376885015560015] 
+\draw    (217.99,186.91) .. controls (193.56,193.01) and (197.4,196.03) .. (198.77,205.5) ;
+\draw [shift={(199,207.4)}, rotate = 264.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8706765760871811] 
+\draw    (271.83,187.55) .. controls (292.26,192.23) and (292.97,192.39) .. (288.51,209.47) ;
+\draw [shift={(288,211.4)}, rotate = 284.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (341,144.2) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\Psi_{\underline{C}}( i)$};
+% Text Node
+\draw (190,209.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$TIR_{1}$};
+% Text Node
+\draw (274,213.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$TIR_{2}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{document}

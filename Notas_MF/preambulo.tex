@@ -1,0 +1,187 @@
+\documentclass[
+letterpaper,
+11pt, % Cambiar a 10 si es que no cabe
+oneside,
+onecolumn, %twocolumn para dos columnas
+article
+]{memoir}
+
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes} % La fuente a usar, si no compila quitar esta línea
+\usepackage[svgnames]{xcolor} % Required for colour specification
+\usepackage{blindtext} % Controls the indentation and the space between paragraphs
+\usepackage{tikzsymbols} % Emojis
+\usepackage{tikz} %Grphics 
+\usepackage{empheq} % Hace la hoja tamaño carta
+\usetikzlibrary{snakes,positioning, decorations.pathreplacing,decorations.markings,babel} % Diagrams
+\usepackage{rotating} % Diagrams
+\usepackage{pifont} % Figuras para referenciar
+\usepackage{cancel} % To draw diagonal lines through expressions
+\usepackage{tabularx} % Tables
+\usepackage{multicol} % Multiple columns
+\usepackage{enumitem} % Enumerate with diferent bullets
+\usepackage{ulem} % Underline fixing code errors of normal \underline{•}
+\usepackage{color,soul} % Underline with colors
+\medievalpage
+
+% Paquetes para matemáticas
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage[spanish,onelanguage,ruled,linesnumbered]{algorithm2e}
+\usepackage{stackengine}
+\usepackage[mathscr]{euscript}
+\usepackage[scr]{rsfso}
+\usepackage{empheq}
+\usepackage[final]{microtype}
+\usepackage{graphicx} % Para incluir figuras
+\usepackage{lipsum}
+\usepackage{actuarialsymbol} %Actuarial notation
+\usepackage{hyperref}
+\usepackage{float}
+
+% Command "alignedbox{}{}" for a box within an align environment
+% Source: http://www.latex-community.org/forum/viewtopic.php?f=46&t=8144
+\newlength\dlf  % Define a new measure, dlf
+\newcommand\alignedbox[2]{
+% Argument #1 = before & if there were no box (lhs)
+% Argument #2 = after & if there were no box (rhs)
+&  % Alignment sign of the line
+{
+\settowidth\dlf{$\displaystyle #1$}  
+    % The width of \dlf is the width of the lhs, with a displaystyle font
+\addtolength\dlf{\fboxsep+\fboxrule}  
+    % Add to it the distance to the box, and the width of the line of the box
+\hspace{-\dlf}  
+    % Move everything dlf units to the left, so that & #1 #2 is aligned under #1 & #2
+\boxed{#1 #2}
+    % Put a box around lhs and rhs
+}
+}
+
+\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Para onecolumn
+\setulmarginsandblock{0.5in}{1.5in}{1}  % Márgenes superior e inferior
+\checkandfixthelayout
+
+\parindent=0pt % disables indentation
+\parskip=12pt % adds vertical space between paragraphs
+
+\addto{\captionsspanish}{%
+  \renewcommand{\bibname}{\Large Referencias}
+}
+
+\counterwithout{section}{chapter}
+\counterwithout{figure}{chapter}
+
+\makepagestyle{plain}
+\makeevenfoot{plain}{\thepage}{}{}
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+
+\makeatletter %
+\makechapterstyle{standard}{
+  \setlength{\beforechapskip}{2\baselineskip}
+  \setlength{\midchapskip}{0\baselineskip}
+  \setlength{\afterchapskip}{2\baselineskip}
+  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
+  \renewcommand{\chapnamefont}{\normalfont\Large}
+  \renewcommand{\printchaptername}{}
+  \renewcommand{\chapternamenum}{\space}
+  \renewcommand{\chapnumfont}{\normalfont\Large}
+  %\renewcommand{\printchapternum}{\chapnumfont \thechapter.}
+  %\renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+  \renewcommand{\afterchapternum}{ }
+  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
+  \renewcommand{\chaptitlefont}{\bfseries\LARGE}
+  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+}
+\makeatother
+
+\chapterstyle{standard}
+
+\makeatletter %
+\makechapterstyle{appendix}{
+  \setlength{\beforechapskip}{2\baselineskip}
+  \setlength{\midchapskip}{0\baselineskip}
+  \setlength{\afterchapskip}{2\baselineskip}
+  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
+  \renewcommand{\chapnamefont}{\normalfont\Large}
+  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
+  \renewcommand{\chapternamenum}{\space}
+  \renewcommand{\chapnumfont}{\normalfont\Large}
+  \renewcommand{\printchapternum}{\chapnumfont \thechapter.}
+  %\renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+  \renewcommand{\afterchapternum}{ }
+  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
+  \renewcommand{\chaptitlefont}{\bfseries\LARGE}
+  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+}
+\makeatother
+
+\setlength{\columnseprule}{1pt} %Line between paragraphs
+
+\tikzset{
+  % style to apply some styles to each segment of a path
+  on each segment/.style={
+    decorate,
+    decoration={
+      show path construction,
+      moveto code={},
+      lineto code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+      curveto code={
+        \path [#1] (\tikzinputsegmentfirst)
+        .. controls
+        (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+        ..
+        (\tikzinputsegmentlast);
+      },
+      closepath code={
+        \path [#1]
+        (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+      },
+    },
+  },
+  % style to add an arrow in the middle of a path
+  end arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position 0.999 with {\arrow[#1]{stealth}}
+      }}},
+} % Curved lines
+
+% Declaración de comandos y operadores
+\newcommand\RR{\mathbb R}
+\newcommand\NN{\mathbb N}
+\newcommand\PP{\mathbb P}
+\newcommand\dpartial[1]{\frac{\partial}{\partial #1}}
+\newcommand\deriv[1]{\frac{d}{d #1}}
+\newcommand\integral[4]{\int_{#1}^{#2} #3 \, d#4}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\DeclareMathOperator\Ber{Bernoulli}
+
+% Se definen los comandos para escribir teoremas, definiciones y demás.
+\theoremstyle{plain}
+\newtheorem*{theorem}{Teorema}
+\newtheorem*{corollary}{Corolario}
+\newtheorem*{lemma}{Lema}
+\newtheorem*{proposition}{Proposici\'on}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definici\'on}
+\theoremstyle{remark}
+\newtheorem*{remark}{Observaci\'on}
